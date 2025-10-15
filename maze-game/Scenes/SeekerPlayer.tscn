@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6j08mitwwfla"]
+
+[ext_resource type="Script" uid="uid://c81lhxedebrfp" path="res://Scripts/seeker_player.gd" id="1_i1f02"]
+[ext_resource type="Texture2D" uid="uid://cbwbvoswrovsv" path="res://icon.svg" id="2_lywod"]
+
+[node name="SeekerPlayer" type="CharacterBody2D"]
+script = ExtResource("1_i1f02")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_lywod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
