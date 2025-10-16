@@ -16,7 +16,8 @@ func _physics_process(delta: float) -> void:
 	#normalize the vector to account for diagonal movement later maybe?
 	if direction.length() > 0:
 		last_direction = direction
-		play_walk_animation(direction)
+		#play_walk_animation(direction)
+		play_idle_animation(direction)
 		#print("Debug Direction: ", direction)
 	else:
 		play_idle_animation(last_direction)
@@ -25,7 +26,7 @@ func _physics_process(delta: float) -> void:
 func play_walk_animation(direction):
 	if direction.x > 0:
 		$AnimatedSprite2D.play("walk_right")
-	elif direction.x > 0:
+	elif direction.x < 0:
 		$AnimatedSprite2D.play("walk_left")
 	elif direction.y > 0:
 		$AnimatedSprite2D.play("walk_down")
@@ -35,7 +36,7 @@ func play_walk_animation(direction):
 func play_idle_animation(direction):
 	if direction.x > 0:
 		$AnimatedSprite2D.play("idle_right")
-	elif direction.x > 0:
+	elif direction.x < 0:
 		$AnimatedSprite2D.play("idle_left")
 	elif direction.y > 0:
 		$AnimatedSprite2D.play("idle_down")
