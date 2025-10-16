@@ -67,4 +67,5 @@ func spawn_footprint():
 	var fp = footprint_scene.instantiate() as Footsteps
 	get_parent().add_child(fp)
 	fp.global_position = global_position
+	fp.rotation = last_direction.angle() + deg_to_rad(90)
 	fp.time_to_live = footprint_lifetime
