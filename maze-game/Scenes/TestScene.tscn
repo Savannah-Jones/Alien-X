@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://kxwotaxvw60r"]
+[gd_scene load_steps=5 format=3 uid="uid://kxwotaxvw60r"]
 
 [ext_resource type="Script" uid="uid://dpscb5k1cqsel" path="res://Scripts/test_scene.gd" id="1_0f5h7"]
-[ext_resource type="PackedScene" uid="uid://d4go6lmobu85h" path="res://Scenes/RunnerPlayer.tscn" id="1_8k7wh"]
 [ext_resource type="PackedScene" uid="uid://c6j08mitwwfla" path="res://Scenes/SeekerPlayer.tscn" id="2_0f5h7"]
 [ext_resource type="PackedScene" uid="uid://1idm5dxdjbdu" path="res://Scenes/Collectible.tscn" id="3_0f5h7"]
 
@@ -22,10 +21,7 @@ anti_aliasing = false
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_0f5h7")
 
-[node name="Runner" parent="." instance=ExtResource("1_8k7wh")]
-
 [node name="Monster" parent="." instance=ExtResource("2_0f5h7")]
-visible = false
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
