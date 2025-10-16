@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4go6lmobu85h"]
+[gd_scene load_steps=6 format=3 uid="uid://d4go6lmobu85h"]
 
 [ext_resource type="Script" uid="uid://cdc07sdm4lpy4" path="res://Scripts/Runner.gd" id="1_qg1ix"]
+[ext_resource type="PackedScene" uid="uid://d007wxbdk3cra" path="res://Scenes/footsteps.tscn" id="2_1biam"]
 [ext_resource type="Texture2D" uid="uid://cbwbvoswrovsv" path="res://icon.svg" id="2_jj63h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ix"]
@@ -13,6 +14,9 @@ point_count = 2
 
 [node name="RunnerPlayer" type="CharacterBody2D"]
 script = ExtResource("1_qg1ix")
+footprint_scene = ExtResource("2_1biam")
+distance_between_footprints = 70.0
+footprint_lifetime = 6.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 

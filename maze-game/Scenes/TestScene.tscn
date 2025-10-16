@@ -1,13 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://kxwotaxvw60r"]
+[gd_scene load_steps=6 format=3 uid="uid://kxwotaxvw60r"]
 
 [ext_resource type="Script" uid="uid://dpscb5k1cqsel" path="res://Scripts/test_scene.gd" id="1_0f5h7"]
 [ext_resource type="PackedScene" uid="uid://d4go6lmobu85h" path="res://Scenes/RunnerPlayer.tscn" id="1_8k7wh"]
 [ext_resource type="PackedScene" uid="uid://c6j08mitwwfla" path="res://Scenes/SeekerPlayer.tscn" id="2_0f5h7"]
-[ext_resource type="Texture2D" uid="uid://cbwbvoswrovsv" path="res://icon.svg" id="2_iufkg"]
 [ext_resource type="PackedScene" uid="uid://1idm5dxdjbdu" path="res://Scenes/Collectible.tscn" id="3_0f5h7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsjrb"]
-size = Vector2(399, 45)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f5h7"]
 bg_color = Color(0.323717, 0.592804, 0.181635, 1)
@@ -30,19 +26,6 @@ script = ExtResource("1_0f5h7")
 
 [node name="Monster" parent="." instance=ExtResource("2_0f5h7")]
 visible = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2(0, 127)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(4, -41)
-scale = Vector2(3.10938, 0.359375)
-texture = ExtResource("2_iufkg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(4.5, -41.5)
-shape = SubResource("RectangleShape2D_qsjrb")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

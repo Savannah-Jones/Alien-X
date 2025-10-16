@@ -17,10 +17,10 @@ func _physics_process(delta: float) -> void:
 	if direction.length() > 0:
 		last_direction = direction
 		play_walk_animation(direction)
-		print(direction)
+		#print("Debug Direction: ", direction)
 	else:
 		play_idle_animation(last_direction)
-		print(direction)
+		#print("Debug Direction: ", direction)
 
 func play_walk_animation(direction):
 	if direction.x > 0:

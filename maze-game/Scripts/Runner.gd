@@ -5,6 +5,15 @@ const SPEED = 300.0
 const SPRINT_SPEED = 500
 var last_direction := Vector2(1,0)
 
+@export var footprint_scene: PackedScene
+@export var distance_between_footprints := 64.0
+@export var footprint_lifetime := 30.0
+
+var last_footprint_pos: Vector2
+
+func _ready() -> void:
+	last_footprint_pos = global_position
+
 
 func _physics_process(delta: float) -> void:
 
@@ -13,13 +22,24 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	#normalize the vector to account for diagonal movement later maybe?
+	
+	
 	if direction.length() > 0:
 		last_direction = direction
 		play_walk_animation(direction)
-		print(direction)
+		#print("Debug Direction: ", direction)
 	else:
 		play_idle_animation(last_direction)
-		print(direction)
+		#print("Debug Direction: ", direction)
+		
+		
+	if direction.length() > 0:
+		var dist = global_position.distance_to(last_footprint_pos)
+		if dist >= distance_between_footprints:
+			spawn_footprint()
+			last_footprint_pos = global_position
+		
+		
 
 func play_walk_animation(direction):
 	if direction.x > 0:
@@ -40,3 +60,11 @@ func play_idle_animation(direction):
 		$AnimatedSprite2D.play("idle_down")
 	elif direction.y < 0:
 		$AnimatedSprite2D.play("idle_up")
+
+
+func spawn_footprint():
+	
+	var fp = footprint_scene.instantiate() as Footsteps
+	get_parent().add_child(fp)
+	fp.global_position = global_position
+	fp.time_to_live = footprint_lifetime
