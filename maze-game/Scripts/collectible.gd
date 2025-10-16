@@ -2,7 +2,7 @@ extends Area2D
 class_name Items
 
 @onready var anim = $AnimatedSprite2D
-var itemsCollected = 0;
+static var itemsCollected = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
