@@ -11,9 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://crum0tlb3qrse" path="res://Music/MonsterAttackSounds/hit-flesh-02-266309.mp3" id="9_618gp"]
 [ext_resource type="AudioStream" uid="uid://ckoiq65g7fcx0" path="res://Music/MonsterAttackSounds/slashkut-108175.mp3" id="10_dtke7"]
 [ext_resource type="AudioStream" uid="uid://bvfltu7gbj712" path="res://Music/MonsterAttackSounds/violent-sword-slice-2-393841.mp3" id="11_uoygu"]
-[ext_resource type="AudioStream" uid="uid://dct5ppjk8qs3l" path="res://Music/simple-whoosh-382724.mp3" id="12_dtke7"]
-[ext_resource type="AudioStream" uid="uid://bsx83hdiisxwo" path="res://Music/whoosh-effect-382717.mp3" id="13_uoygu"]
-[ext_resource type="AudioStream" uid="uid://d04vh6ok3qvcx" path="res://Music/whoosh-motion-405445.mp3" id="14_nxqk0"]
+[ext_resource type="AudioStream" uid="uid://dct5ppjk8qs3l" path="res://Music/MonsterAttackSounds/simple-whoosh-382724.mp3" id="12_dtke7"]
+[ext_resource type="AudioStream" uid="uid://bsx83hdiisxwo" path="res://Music/MonsterAttackSounds/whoosh-effect-382717.mp3" id="13_uoygu"]
+[ext_resource type="AudioStream" uid="uid://d04vh6ok3qvcx" path="res://Music/MonsterAttackSounds/whoosh-motion-405445.mp3" id="14_nxqk0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtke7"]
 atlas = ExtResource("3_65ogj")

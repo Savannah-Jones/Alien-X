@@ -10,15 +10,15 @@ var last_direction := Vector2(1,0)
 @export var footprint_lifetime := 30.0
 var last_footprint_pos: Vector2
 
-var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-var time_to_run := 5.0 #time allowed to sprint before needs to be recharged
+
+#var time_to_run := 5.0 #time allowed to sprint before needs to be recharged
 
 func _ready() -> void:
 	last_footprint_pos = global_position
 
 
 func _physics_process(delta: float) -> void:
-
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = direction * SPEED
 	
 	move_and_slide()
@@ -38,9 +38,9 @@ func _physics_process(delta: float) -> void:
 		if dist >= distance_between_footprints:
 			spawn_footprint()
 			last_footprint_pos = global_position
-	
-	if Input.is_action_just_pressed("Run"):
-		sprint()
+	#
+	#if Input.is_action_just_pressed("Run"):
+		#sprint()
 		
 
 func play_walk_animation(direction):
@@ -72,8 +72,8 @@ func spawn_footprint():
 	fp.rotation = last_direction.angle() + deg_to_rad(90)
 	fp.time_to_live = footprint_lifetime
 
-func sprint():
-	pass
-	#velocity = direction * SPRINT_SPEED
-	#for ():
-		#
+#func sprint():
+	#pass
+	##velocity = direction * SPRINT_SPEED
+	##for ():
+		##
