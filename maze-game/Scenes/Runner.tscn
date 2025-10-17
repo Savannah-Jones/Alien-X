@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4go6lmobu85h"]
+
+[ext_resource type="Script" uid="uid://cdc07sdm4lpy4" path="res://Scripts/Runner.gd" id="1_j1som"]
+[ext_resource type="PackedScene" uid="uid://d007wxbdk3cra" path="res://Scenes/footsteps.tscn" id="2_p81ih"]
+[ext_resource type="Texture2D" uid="uid://cbwbvoswrovsv" path="res://icon.svg" id="3_ukf3h"]
+[ext_resource type="AudioStream" uid="uid://b08mu5svtuvhg" path="res://Music/PlayerSounds/heartbeat-tense-377250.mp3" id="4_tebkp"]
+[ext_resource type="AudioStream" uid="uid://cau3fhfguntfq" path="res://Music/PlayerSounds/concrete-footsteps-1-6265.mp3" id="5_aq4gv"]
+[ext_resource type="AudioStream" uid="uid://lilu7hc7hjsx" path="res://Music/PlayerSounds/running-on-concrete-268478.mp3" id="6_my6vf"]
+[ext_resource type="AudioStream" uid="uid://cds6x7xvf51fy" path="res://Music/PlayerSounds/man-death-scream-186763.mp3" id="7_wr6ry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ix"]
+size = Vector2(38, 38)
+
+[sub_resource type="Curve" id="Curve_qg1ix"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Runner" type="CharacterBody2D"]
+script = ExtResource("1_j1som")
+footprint_scene = ExtResource("2_p81ih")
+distance_between_footprints = 70.0
+footprint_lifetime = 6.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_ukf3h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qg1ix")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+rotation = 1.57079
+emitting = false
+lifetime = 1.3
+randomness = 1.0
+local_coords = true
+spread = 90.0
+color = Color(0.165869, 1.74233e-05, 0.66523, 1)
+hue_variation_min = 0.12
+hue_variation_max = 0.12
+hue_variation_curve = SubResource("Curve_qg1ix")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="TakeDmg" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("4_tebkp")
+
+[node name="Walking" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_aq4gv")
+
+[node name="Running" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("6_my6vf")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("7_wr6ry")

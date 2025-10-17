@@ -18,13 +18,13 @@ func _ready():
 	slash_hitbox.connect("body_entered", Callable(self, "_on_slash_area_entered"))
 
 #remove this area function later. this is for testing
-func _on_slash_area_entered(area: Area2D) -> void:
-	play_random_hit_sound()
-	_slash_hit_happened = true
-	print("Slash hit area: ", area.name)
+#func _on_slash_area_entered(area: Area2D) -> void:
+	#play_random_hit_sound()
+	#_slash_hit_happened = true
+	#print("Slash hit area: ", area.name)
 
 func _on_slash_body_entered(body: Node2D) -> void:
-	if body.name == "Player":   # or use a group check
+	if body.name == "Runner":   # or use a group check
 		print("Slash hit player!")
 		play_random_hit_sound()
 		_slash_hit_happened = true
@@ -72,7 +72,7 @@ func play_idle_animation(direction):
 
 
 func attack():
-	
+	#add attack delay later.
 
 	slash_effect.visible = true
 	slash_effect.play("slash")
