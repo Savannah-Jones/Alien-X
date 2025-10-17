@@ -1,11 +1,19 @@
-[gd_scene load_steps=23 format=3 uid="uid://c6j08mitwwfla"]
+[gd_scene load_steps=45 format=3 uid="uid://c6j08mitwwfla"]
 
 [ext_resource type="Script" uid="uid://c210e5gasj52a" path="res://Scripts/Seeker.gd" id="1_lywod"]
-[ext_resource type="Texture2D" uid="uid://cbwbvoswrovsv" path="res://icon.svg" id="2_lywod"]
 [ext_resource type="Texture2D" uid="uid://bw73wn4jp0usd" path="res://Art/Character Assets/MonsterSprite_Idle_Down.png" id="3_65ogj"]
 [ext_resource type="Texture2D" uid="uid://cixjmexqs746m" path="res://Art/Character Assets/MonsterSprite_Idle_Left.png" id="3_opx2b"]
 [ext_resource type="Texture2D" uid="uid://dbjihwodyxt5u" path="res://Art/Character Assets/MonsterSprite_Idle_Right.png" id="4_65ogj"]
+[ext_resource type="Texture2D" uid="uid://c37t2ef2w62ps" path="res://Art/Character Assets/sprite-sheet.png" id="6_7tc33"]
 [ext_resource type="Texture2D" uid="uid://cw8qixhedxe3" path="res://Art/Character Assets/MonsterSprite_Idle_Up.png" id="6_65y6e"]
+[ext_resource type="AudioStream" uid="uid://bx4i0qblnfs47" path="res://Music/MonsterAttackSounds/axe-hit-flesh-02-266299.mp3" id="7_p5i7s"]
+[ext_resource type="AudioStream" uid="uid://bvhkt7tjk48gp" path="res://Music/MonsterAttackSounds/hit-flesh-01-266311.mp3" id="8_1883m"]
+[ext_resource type="AudioStream" uid="uid://crum0tlb3qrse" path="res://Music/MonsterAttackSounds/hit-flesh-02-266309.mp3" id="9_618gp"]
+[ext_resource type="AudioStream" uid="uid://ckoiq65g7fcx0" path="res://Music/MonsterAttackSounds/slashkut-108175.mp3" id="10_dtke7"]
+[ext_resource type="AudioStream" uid="uid://bvfltu7gbj712" path="res://Music/MonsterAttackSounds/violent-sword-slice-2-393841.mp3" id="11_uoygu"]
+[ext_resource type="AudioStream" uid="uid://dct5ppjk8qs3l" path="res://Music/simple-whoosh-382724.mp3" id="12_dtke7"]
+[ext_resource type="AudioStream" uid="uid://bsx83hdiisxwo" path="res://Music/whoosh-effect-382717.mp3" id="13_uoygu"]
+[ext_resource type="AudioStream" uid="uid://d04vh6ok3qvcx" path="res://Music/whoosh-motion-405445.mp3" id="14_nxqk0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtke7"]
 atlas = ExtResource("3_65ogj")
@@ -132,15 +140,106 @@ animations = [{
 radius = 20.0
 height = 60.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_iomxm"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3fsb"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4fsp"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1015m"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmsqj"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru23t"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyuvb"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwaww"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ueo8"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp84s"]
+atlas = ExtResource("6_7tc33")
+region = Rect2(128, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hp84s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iomxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3fsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4fsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1015m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmsqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru23t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyuvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwaww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ueo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp84s")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"slash2",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_65y6e"]
+radius = 11.0
+height = 84.0
+
+[sub_resource type="Gradient" id="Gradient_65y6e"]
+offsets = PackedFloat32Array(0.0133333, 0.633333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.79693, 0.745735, 0.121774, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_65y6e"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="SeekerPlayer" type="CharacterBody2D"]
 script = ExtResource("1_lywod")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_lywod")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animations" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(0.5, 0.5)
@@ -148,7 +247,7 @@ sprite_frames = SubResource("SpriteFrames_lywod")
 animation = &"idle_right"
 frame_progress = 0.754678
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_lywod")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -156,3 +255,67 @@ ignore_rotation = false
 zoom = Vector2(4, 4)
 process_callback = 0
 position_smoothing_enabled = true
+
+[node name="Slash" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hp84s")
+animation = &"slash"
+
+[node name="SlashHitbox" type="Area2D" parent="."]
+position = Vector2(37, 0)
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlashHitbox"]
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_65y6e")
+
+[node name="SlashParticles" type="CPUParticles2D" parent="."]
+rotation = 1.57079
+emitting = false
+amount = 30
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+randomness = 0.03
+lifetime_randomness = 0.09
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 400.0
+initial_velocity_max = 600.0
+angular_velocity_min = 6.0
+angular_velocity_max = 10.0
+radial_accel_min = 200.0
+radial_accel_max = 200.0
+scale_amount_min = 0.4
+color = Color(0.971569, 0.977201, 1, 1)
+color_ramp = SubResource("Gradient_65y6e")
+hue_variation_min = 0.12
+hue_variation_max = 0.12
+hue_variation_curve = SubResource("Curve_65y6e")
+
+[node name="SlashSounds" type="Node" parent="."]
+
+[node name="Hit1" type="AudioStreamPlayer2D" parent="SlashSounds"]
+stream = ExtResource("7_p5i7s")
+
+[node name="Hit2" type="AudioStreamPlayer2D" parent="SlashSounds"]
+stream = ExtResource("8_1883m")
+
+[node name="Hit3" type="AudioStreamPlayer2D" parent="SlashSounds"]
+stream = ExtResource("9_618gp")
+
+[node name="Hit4" type="AudioStreamPlayer2D" parent="SlashSounds"]
+stream = ExtResource("10_dtke7")
+
+[node name="Hit5" type="AudioStreamPlayer2D" parent="SlashSounds"]
+stream = ExtResource("11_uoygu")
+
+[node name="Miss" type="AudioStreamPlayer2D" parent="SlashSounds"]
+stream = ExtResource("12_dtke7")
+
+[node name="Miss2" type="AudioStreamPlayer2D" parent="SlashSounds"]
+stream = ExtResource("13_uoygu")
+
+[node name="Miss3" type="AudioStreamPlayer2D" parent="SlashSounds"]
+stream = ExtResource("14_nxqk0")

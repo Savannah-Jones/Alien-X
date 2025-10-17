@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	# do something
+	print("DEBUG: Something collided with me.")
 	if body.name == "Runner":
 		print("DEBUG: Runner collided with me.")
 		var tween = create_tween()
