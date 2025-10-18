@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4go6lmobu85h"]
+[gd_scene load_steps=12 format=3 uid="uid://d4go6lmobu85h"]
 
 [ext_resource type="Script" uid="uid://cdc07sdm4lpy4" path="res://Scripts/Runner.gd" id="1_j1som"]
 [ext_resource type="PackedScene" uid="uid://d007wxbdk3cra" path="res://Scenes/footsteps.tscn" id="2_p81ih"]
@@ -7,8 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://cau3fhfguntfq" path="res://Music/PlayerSounds/concrete-footsteps-1-6265.mp3" id="5_aq4gv"]
 [ext_resource type="AudioStream" uid="uid://lilu7hc7hjsx" path="res://Music/PlayerSounds/running-on-concrete-268478.mp3" id="6_my6vf"]
 [ext_resource type="AudioStream" uid="uid://cds6x7xvf51fy" path="res://Music/PlayerSounds/man-death-scream-186763.mp3" id="7_wr6ry"]
-[ext_resource type="AudioStream" uid="uid://bsxvs40kh61rb" path="res://Music/PlayerSounds/normal-breath-loop-400151.mp3" id="8_p81ih"]
-[ext_resource type="AudioStream" uid="uid://bvr0ssqt031kb" path="res://Music/MonsterSounds/114-low-impact-420335.mp3" id="9_ukf3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ix"]
 size = Vector2(38, 38)
@@ -43,9 +41,6 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 anti_aliasing = false
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_p81ih"]
-radius = 220.0
 
 [node name="Runner" type="CharacterBody2D" groups=["Runner"]]
 script = ExtResource("1_j1som")
@@ -88,7 +83,6 @@ stream = ExtResource("4_tebkp")
 
 [node name="Walking" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("5_aq4gv")
-parameters/looping = false
 
 [node name="Running" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("6_my6vf")
@@ -97,11 +91,6 @@ stream = ExtResource("6_my6vf")
 stream = ExtResource("7_wr6ry")
 
 [node name="OutofSprint" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("8_p81ih")
-parameters/looping = true
-
-[node name="MonsterRadius" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("9_ukf3h")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -19.0
@@ -123,11 +112,3 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_p81ih")
 max_value = 8.0
 value = 8.0
 show_percentage = false
-
-[node name="MonsterDetectRadius" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MonsterDetectRadius"]
-shape = SubResource("CircleShape2D_p81ih")
-
-[connection signal="body_entered" from="MonsterDetectRadius" to="." method="_on_monster_detect_radius_body_entered"]
-[connection signal="body_exited" from="MonsterDetectRadius" to="." method="_on_monster_detect_radius_body_exited"]

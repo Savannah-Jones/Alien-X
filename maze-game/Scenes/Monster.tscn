@@ -6,14 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dbjihwodyxt5u" path="res://Art/Character Assets/MonsterSprite_Idle_Right.png" id="4_65ogj"]
 [ext_resource type="Texture2D" uid="uid://c37t2ef2w62ps" path="res://Art/Character Assets/sprite-sheet.png" id="6_7tc33"]
 [ext_resource type="Texture2D" uid="uid://cw8qixhedxe3" path="res://Art/Character Assets/MonsterSprite_Idle_Up.png" id="6_65y6e"]
-[ext_resource type="AudioStream" uid="uid://bx4i0qblnfs47" path="res://Music/MonsterAttackSounds/axe-hit-flesh-02-266299.mp3" id="7_p5i7s"]
-[ext_resource type="AudioStream" uid="uid://bvhkt7tjk48gp" path="res://Music/MonsterAttackSounds/hit-flesh-01-266311.mp3" id="8_1883m"]
-[ext_resource type="AudioStream" uid="uid://crum0tlb3qrse" path="res://Music/MonsterAttackSounds/hit-flesh-02-266309.mp3" id="9_618gp"]
-[ext_resource type="AudioStream" uid="uid://ckoiq65g7fcx0" path="res://Music/MonsterAttackSounds/slashkut-108175.mp3" id="10_dtke7"]
-[ext_resource type="AudioStream" uid="uid://bvfltu7gbj712" path="res://Music/MonsterAttackSounds/violent-sword-slice-2-393841.mp3" id="11_uoygu"]
-[ext_resource type="AudioStream" uid="uid://dct5ppjk8qs3l" path="res://Music/MonsterAttackSounds/simple-whoosh-382724.mp3" id="12_dtke7"]
-[ext_resource type="AudioStream" uid="uid://bsx83hdiisxwo" path="res://Music/MonsterAttackSounds/whoosh-effect-382717.mp3" id="13_uoygu"]
-[ext_resource type="AudioStream" uid="uid://d04vh6ok3qvcx" path="res://Music/MonsterAttackSounds/whoosh-motion-405445.mp3" id="14_nxqk0"]
+[ext_resource type="AudioStream" uid="uid://bx4i0qblnfs47" path="res://Music/MonsterSounds/axe-hit-flesh-02-266299.mp3" id="7_p5i7s"]
+[ext_resource type="AudioStream" uid="uid://bvhkt7tjk48gp" path="res://Music/MonsterSounds/hit-flesh-01-266311.mp3" id="8_1883m"]
+[ext_resource type="AudioStream" uid="uid://crum0tlb3qrse" path="res://Music/MonsterSounds/hit-flesh-02-266309.mp3" id="9_618gp"]
+[ext_resource type="AudioStream" uid="uid://ckoiq65g7fcx0" path="res://Music/MonsterSounds/slashkut-108175.mp3" id="10_dtke7"]
+[ext_resource type="AudioStream" uid="uid://bvfltu7gbj712" path="res://Music/MonsterSounds/violent-sword-slice-2-393841.mp3" id="11_uoygu"]
+[ext_resource type="AudioStream" uid="uid://dct5ppjk8qs3l" path="res://Music/MonsterSounds/simple-whoosh-382724.mp3" id="12_dtke7"]
+[ext_resource type="AudioStream" uid="uid://bsx83hdiisxwo" path="res://Music/MonsterSounds/whoosh-effect-382717.mp3" id="13_uoygu"]
+[ext_resource type="AudioStream" uid="uid://d04vh6ok3qvcx" path="res://Music/MonsterSounds/whoosh-motion-405445.mp3" id="14_nxqk0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtke7"]
 atlas = ExtResource("3_65ogj")
@@ -216,16 +216,10 @@ animations = [{
 "loop": false,
 "name": &"slash",
 "speed": 12.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"slash2",
-"speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_65y6e"]
-radius = 11.0
-height = 84.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjg4q"]
+size = Vector2(25, 77)
 
 [sub_resource type="Gradient" id="Gradient_65y6e"]
 offsets = PackedFloat32Array(0.0133333, 0.633333, 1)
@@ -236,7 +230,7 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="SeekerPlayer" type="CharacterBody2D"]
+[node name="SeekerPlayer" type="CharacterBody2D" groups=["Monster"]]
 script = ExtResource("1_lywod")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
@@ -245,7 +239,8 @@ position = Vector2(0, -1)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_lywod")
 animation = &"idle_right"
-frame_progress = 0.754678
+frame = 1
+frame_progress = 0.497505
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_lywod")
@@ -259,6 +254,7 @@ position_smoothing_enabled = true
 [node name="Slash" type="AnimatedSprite2D" parent="."]
 visible = false
 texture_filter = 1
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_hp84s")
 animation = &"slash"
 
@@ -267,8 +263,9 @@ position = Vector2(37, 0)
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlashHitbox"]
-position = Vector2(2, 0)
-shape = SubResource("CapsuleShape2D_65y6e")
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_cjg4q")
+disabled = true
 
 [node name="SlashParticles" type="CPUParticles2D" parent="."]
 rotation = 1.57079
@@ -319,3 +316,5 @@ stream = ExtResource("13_uoygu")
 
 [node name="Miss3" type="AudioStreamPlayer2D" parent="SlashSounds"]
 stream = ExtResource("14_nxqk0")
+
+[connection signal="animation_finished" from="Slash" to="." method="_on_slash_done"]

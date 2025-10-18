@@ -11,21 +11,18 @@ var last_direction := Vector2(1,0)
 @onready var slash_hitbox = $SlashHitbox
 @onready var slash_sounds = $SlashSounds #might need to change since #SlashSounds is now just a node holding audiostreamplayers
 var _slash_hit_happened := false
-
+@export var attack_damage := 3.0
 
 func _ready():
-	slash_hitbox.connect("area_entered", Callable(self, "_on_slash_area_entered"))
-	slash_hitbox.connect("body_entered", Callable(self, "_on_slash_area_entered"))
+	#slash_hitbox.connect("area_entered", Callable(self, "_on_slash_area_entered"))
+	slash_hitbox.connect("body_entered", Callable(self, "_on_slash_body_entered"))
 
-#remove this area function later. this is for testing
-#func _on_slash_area_entered(area: Area2D) -> void:
-	#play_random_hit_sound()
-	#_slash_hit_happened = true
-	#print("Slash hit area: ", area.name)
 
-func _on_slash_body_entered(body: Node2D) -> void:
-	if body.name == "Runner":   # or use a group check
-		print("Slash hit player!")
+func _on_slash_body_entered(body: CharacterBody2D) -> void:
+	if body.is_in_group("Runner"):
+		print("Slash hit runner!")
+		if body.has_method("take_damage"):
+			body.call("take_damage", attack_damage)
 		play_random_hit_sound()
 		_slash_hit_happened = true
 	else:
@@ -95,15 +92,15 @@ func attack():
 	slash_effect.flip_v = last_direction.x < 0
 	
 	
-	slash_hitbox.monitoring = true
+	$SlashHitbox/CollisionShape2D.disabled = false
 	slash_particles.restart()
 	slash_particles.emitting = true
-		
-	slash_effect.connect("animation_finished", Callable(self, "_on_slash_done"), CONNECT_ONE_SHOT)
+
+	
 #
 func _on_slash_done():
 	slash_effect.visible = false
-	slash_hitbox.monitoring = false
+	$SlashHitbox/CollisionShape2D.disabled = true
 	
 	if not _slash_hit_happened:
 		play_miss_sound()  # nothing was hit during this slash
