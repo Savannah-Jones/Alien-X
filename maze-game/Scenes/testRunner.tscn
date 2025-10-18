@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clj1csnhqtyyl" path="res://Scripts/test_runner.gd" id="1_xi1o3"]
 [ext_resource type="Texture2D" uid="uid://cbwbvoswrovsv" path="res://icon.svg" id="2_e3pej"]
 [ext_resource type="AudioStream" uid="uid://cds6x7xvf51fy" path="res://Music/PlayerSounds/man-death-scream-186763.mp3" id="3_ka0d4"]
-[ext_resource type="AudioStream" uid="uid://bvr0ssqt031kb" path="res://Music/MonsterSounds/114-low-impact-420335.mp3" id="4_gssux"]
+[ext_resource type="AudioStream" uid="uid://vim74opivihl" path="res://Music/MonsterSounds/horror-thriller-action-247745-[AudioTrimmer.com].mp3" id="4_gssux"]
 [ext_resource type="AudioStream" uid="uid://b08mu5svtuvhg" path="res://Music/PlayerSounds/heartbeat-tense-377250.mp3" id="4_joha4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ka0d4"]
@@ -40,6 +40,7 @@ stream = ExtResource("3_ka0d4")
 
 [node name="MonsterRadius" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_gssux")
+parameters/looping = true
 
 [node name="TakeDmg" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_joha4")
