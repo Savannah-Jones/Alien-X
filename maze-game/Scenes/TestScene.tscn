@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://kxwotaxvw60r"]
+[gd_scene load_steps=7 format=3 uid="uid://kxwotaxvw60r"]
 
 [ext_resource type="Script" uid="uid://dpscb5k1cqsel" path="res://Scripts/test_scene.gd" id="1_0f5h7"]
 [ext_resource type="PackedScene" uid="uid://c6j08mitwwfla" path="res://Scenes/Monster.tscn" id="2_0f5h7"]
 [ext_resource type="PackedScene" uid="uid://1idm5dxdjbdu" path="res://Scenes/Collectible.tscn" id="3_0f5h7"]
 [ext_resource type="PackedScene" uid="uid://cxcbq07tnykve" path="res://Scenes/testRunner.tscn" id="4_iufkg"]
+[ext_resource type="AudioStream" uid="uid://c331c62ebm2dx" path="res://Music/Ambience/spooky-atomsphere-by-marie-louise-janneman_2-213113.mp3" id="5_0f5h7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f5h7"]
 bg_color = Color(0.323717, 0.592804, 0.181635, 1)
@@ -51,3 +52,7 @@ scale = Vector2(0.622244, 0.622244)
 
 [node name="TestRunner" parent="." instance=ExtResource("4_iufkg")]
 position = Vector2(374, -30)
+
+[node name="AmbientMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0f5h7")
+parameters/looping = true
