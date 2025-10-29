@@ -18,7 +18,7 @@ func _ready():
 	slash_hitbox.connect("body_entered", Callable(self, "_on_slash_body_entered"))
 
 
-func _on_slash_body_entered(body: CharacterBody2D) -> void:
+func _on_slash_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Runner"):
 		print("Slash hit runner!")
 		if body.has_method("take_damage"):
