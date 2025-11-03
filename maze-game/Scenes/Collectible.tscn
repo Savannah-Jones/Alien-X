@@ -45,7 +45,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 4.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqeun"]
@@ -64,8 +64,7 @@ texture_filter = 1
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_15jqs")
 animation = &"idle"
-frame = 1
-frame_progress = 0.762398
+frame_progress = 0.0989457
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

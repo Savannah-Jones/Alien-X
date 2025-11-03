@@ -13,12 +13,18 @@ var last_direction := Vector2(1,0)
 var _slash_hit_happened := false
 @export var attack_damage := 3.0
 
+
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
+
+
+
 func _ready():
 	#slash_hitbox.connect("area_entered", Callable(self, "_on_slash_area_entered"))
 	slash_hitbox.connect("body_entered", Callable(self, "_on_slash_body_entered"))
 
 
-func _on_slash_body_entered(body: CharacterBody2D) -> void:
+func _on_slash_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Runner"):
 		print("Slash hit runner!")
 		if body.has_method("take_damage"):
@@ -30,7 +36,8 @@ func _on_slash_body_entered(body: CharacterBody2D) -> void:
 
 func _physics_process(delta: float) -> void:
 
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	#give monster arrow keys
+	var direction = Input.get_vector("monster_left", "monster_right", "monster_up", "monster_down")
 	velocity = direction * SPEED
 	
 	move_and_slide()
@@ -44,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		play_idle_animation(last_direction)
 		#print("Debug Direction: ", direction)
 		
-	if Input.is_action_just_pressed("Attack"):
+	if Input.is_action_just_pressed("monster_attack"):
 		attack()
 
 func play_walk_animation(direction):

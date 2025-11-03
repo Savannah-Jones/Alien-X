@@ -238,18 +238,10 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_lywod")
-animation = &"idle_right"
-frame = 1
-frame_progress = 0.497505
+animation = &"idle_left"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_lywod")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-ignore_rotation = false
-zoom = Vector2(4, 4)
-process_callback = 0
-position_smoothing_enabled = true
 
 [node name="Slash" type="AnimatedSprite2D" parent="."]
 visible = false
