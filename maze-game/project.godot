@@ -24,6 +24,7 @@ NetworkHandler="*res://Scripts/network_handler.gd"
 
 Runner=""
 Monster=""
+Collectibles=""
 
 [input]
 

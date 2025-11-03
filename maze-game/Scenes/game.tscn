@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://2wifp8jfldnn"]
+[gd_scene load_steps=5 format=3 uid="uid://2wifp8jfldnn"]
 
 [ext_resource type="Script" uid="uid://b7a25tf6mp267" path="res://Scripts/game.gd" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://u2dalbcgahyq" path="res://Scenes/map.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://1idm5dxdjbdu" path="res://Scenes/Collectible.tscn" id="3_3dryh"]
 [ext_resource type="AudioStream" uid="uid://c331c62ebm2dx" path="res://Music/Ambience/spooky-atomsphere-by-marie-louise-janneman_2-213113.mp3" id="3_wrm1d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebmjs"]
@@ -37,6 +36,7 @@ layout_mode = 2
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(512, 800)
 render_target_update_mode = 4
 
@@ -90,32 +90,3 @@ position = Vector2(0, 1)
 [node name="AmbientMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_wrm1d")
 parameters/looping = true
-
-[node name="Collectibles" type="Node" parent="."]
-
-[node name="Collectible" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(-390, 512)
-
-[node name="Collectible2" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(-745, 337)
-
-[node name="Collectible3" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(-733, -147)
-
-[node name="Collectible4" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(-1817, 31)
-
-[node name="Collectible5" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(-114, -1010)
-
-[node name="Collectible6" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(585, 401)
-
-[node name="Collectible7" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(956, -319)
-
-[node name="Collectible8" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(-20, 1058)
-
-[node name="Collectible9" parent="Collectibles" instance=ExtResource("3_3dryh")]
-position = Vector2(-144, -474)

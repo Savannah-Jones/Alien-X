@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://u2dalbcgahyq"]
+[gd_scene load_steps=25 format=4 uid="uid://u2dalbcgahyq"]
 
 [ext_resource type="Texture2D" uid="uid://6ng5cogwgkxi" path="res://Art/Map Assets/TileSet v1.0.png" id="1_26yhd"]
 [ext_resource type="Texture2D" uid="uid://ck3h1njir236d" path="res://Art/Map Assets/Space station._32_2_NOOBJECTS.png" id="2_p3ir5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://uwgyfltbnpib" path="res://Art/Map Assets/spaceships.png" id="4_myvm1"]
 [ext_resource type="PackedScene" uid="uid://d4go6lmobu85h" path="res://Scenes/Runner.tscn" id="5_np2xp"]
 [ext_resource type="PackedScene" uid="uid://c6j08mitwwfla" path="res://Scenes/Monster.tscn" id="6_w7jjh"]
+[ext_resource type="PackedScene" uid="uid://1idm5dxdjbdu" path="res://Scenes/Collectible.tscn" id="7_w7jjh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myvm1"]
 texture = ExtResource("1_26yhd")
@@ -6425,3 +6426,32 @@ position = Vector2(-1249, 32)
 
 [node name="SeekerPlayer" parent="." instance=ExtResource("6_w7jjh")]
 position = Vector2(562, 20)
+
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="Collectible" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(-399, 525)
+
+[node name="Collectible2" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(-752, 332)
+
+[node name="Collectible3" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(-733, -149)
+
+[node name="Collectible4" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(-1807, 28)
+
+[node name="Collectible5" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(-112, -1016)
+
+[node name="Collectible6" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(591, 403)
+
+[node name="Collectible7" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(956, -319)
+
+[node name="Collectible8" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(-14, 1062)
+
+[node name="Collectible9" parent="Collectibles" instance=ExtResource("7_w7jjh")]
+position = Vector2(-143, -469)
