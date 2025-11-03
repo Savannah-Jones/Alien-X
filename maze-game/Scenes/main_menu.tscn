@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://cwuj45ugxu7uc"]
 
-[ext_resource type="Script" uid="uid://cw5wkxq6l02bt" path="res://main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://dg8kpyrionvad" path="res://menu.png" id="2_bqqt6"]
-[ext_resource type="AudioStream" uid="uid://crk5pymht0rb2" path="res://main menu song.mp3" id="3_bqqt6"]
-[ext_resource type="Script" uid="uid://bfmhe5bo2x65q" path="res://scenes/audio_control.gd" id="4_wu84c"]
-[ext_resource type="Script" uid="uid://dm20yli8ljv14" path="res://scenes/full_screen_control.gd" id="5_8ln24"]
-[ext_resource type="FontFile" uid="uid://cgtno5i6a4cff" path="res://bloodcrow.ttf" id="6_rtw2f"]
+[ext_resource type="Script" uid="uid://cw5wkxq6l02bt" path="res://Scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://6qlohigse765" path="res://menu.png" id="2_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://dm60xuq3y73e8" path="res://Music/main menu song.mp3" id="3_bqqt6"]
+[ext_resource type="Script" uid="uid://bfmhe5bo2x65q" path="res://Scripts/audio_control.gd" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://dm20yli8ljv14" path="res://Scripts/full_screen_control.gd" id="5_8ln24"]
+[ext_resource type="FontFile" uid="uid://bmx5k8dhbouff" path="res://bloodcrow.ttf" id="6_rtw2f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_06t4h"]
 
@@ -126,7 +126,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_bqqt6")
 autoplay = true
-bus = &"Music"
 
 [node name="Options" type="Panel" parent="AudioStreamPlayer"]
 anchors_preset = 8

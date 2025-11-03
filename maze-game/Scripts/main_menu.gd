@@ -10,7 +10,7 @@ func _ready():
 
 func _on_start_pressed() -> void:
 	#This is where you would put the main scene level for the game in the ("").
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 
 
 func _on_settings_pressed() -> void:
