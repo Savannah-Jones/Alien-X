@@ -20,14 +20,10 @@ var is_sprinting = false
 var can_sprint := true
 var sprint_cooldown_timer := 0.0
 
-@onready var chase_music = $MonsterRadius
+@onready var chase_music = $Sounds/MonsterRadius
 var ambient_music: AudioStreamPlayer2D
 var ambient_pos := 0.0  # store playback position
 
-
-
-func _enter_tree() -> void:
-	set_multiplayer_authority(name.to_int())
 
 
 func _ready() -> void:
@@ -43,8 +39,9 @@ func fade_out_outofsprint_sound():
 
 
 func _physics_process(delta: float) -> void:
-	if !is_multiplayer_authority(): return
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	#give runner w,a,s,d
+	var direction = Input.get_vector("human_left", "human_right", "human_up", "human_down")
 	
 	
 # --- Sprint handling ---
@@ -67,7 +64,7 @@ func _physics_process(delta: float) -> void:
 			#print("DEBUG: Sprint ended. Starting cooldown...")
 
 # If sprint is not active and the player tries to start sprinting
-	elif can_sprint and Input.is_action_just_pressed("Run") and direction != Vector2.ZERO:
+	elif can_sprint and Input.is_action_just_pressed("human_run") and direction != Vector2.ZERO:
 		is_sprinting = true
 		current_sprint_time = max_sprint_time  # reset to full sprint time on start
 		$Sounds/Running.pitch_scale = randf_range(0.95, 1.05)
@@ -128,7 +125,7 @@ func _physics_process(delta: float) -> void:
 func play_walk_animation(direction):
 	if direction.x > 0:
 		$AnimatedSprite2D.play("walk_right")
-	elif direction.x > 0:
+	elif direction.x < 0:
 		$AnimatedSprite2D.play("walk_left")
 	elif direction.y > 0:
 		$AnimatedSprite2D.play("walk_down")

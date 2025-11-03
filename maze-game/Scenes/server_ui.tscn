@@ -14,7 +14,7 @@ offset_bottom = 40.0
 
 [node name="Server" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Server"
+text = "Host"
 
 [node name="Client" type="Button" parent="VBoxContainer"]
 layout_mode = 2

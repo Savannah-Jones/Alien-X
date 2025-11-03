@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://d4go6lmobu85h"]
+[gd_scene load_steps=43 format=3 uid="uid://d4go6lmobu85h"]
 
 [ext_resource type="Script" uid="uid://cdc07sdm4lpy4" path="res://Scripts/Runner.gd" id="1_j1som"]
 [ext_resource type="PackedScene" uid="uid://d007wxbdk3cra" path="res://Scenes/footsteps.tscn" id="2_p81ih"]
@@ -206,7 +206,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ix"]
-size = Vector2(38, 38)
+size = Vector2(20, 33)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1som"]
 bg_color = Color(0.750769, 0.131297, 0.228087, 1)
@@ -237,11 +237,6 @@ anti_aliasing = false
 [sub_resource type="CircleShape2D" id="CircleShape2D_p81ih"]
 radius = 220.0
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wr6ry"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-
 [node name="Runner" type="CharacterBody2D" groups=["Runner"]]
 script = ExtResource("1_j1som")
 footprint_scene = ExtResource("2_p81ih")
@@ -252,8 +247,7 @@ footprint_lifetime = 6.0
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_4h2pd")
-animation = &"walk_down"
-frame_progress = 0.963938
+animation = &"walk_up"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -261,12 +255,8 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_ukf3h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
 shape = SubResource("RectangleShape2D_qg1ix")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(6, 6)
-process_callback = 0
-position_smoothing_enabled = true
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -316,9 +306,6 @@ show_percentage = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MonsterDetectRadius"]
 shape = SubResource("CircleShape2D_p81ih")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_wr6ry")
 
 [connection signal="body_entered" from="MonsterDetectRadius" to="." method="_on_monster_detect_radius_body_entered"]
 [connection signal="body_exited" from="MonsterDetectRadius" to="." method="_on_monster_detect_radius_body_exited"]

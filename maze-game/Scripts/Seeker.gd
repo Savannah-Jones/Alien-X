@@ -37,7 +37,8 @@ func _on_slash_body_entered(body: Node2D) -> void:
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
 
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	#give monster arrow keys
+	var direction = Input.get_vector("monster_left", "monster_right", "monster_up", "monster_down")
 	velocity = direction * SPEED
 	
 	move_and_slide()
@@ -51,7 +52,7 @@ func _physics_process(delta: float) -> void:
 		play_idle_animation(last_direction)
 		#print("Debug Direction: ", direction)
 		
-	if Input.is_action_just_pressed("Attack"):
+	if Input.is_action_just_pressed("monster_attack"):
 		attack()
 
 func play_walk_animation(direction):

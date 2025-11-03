@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func spawn_player(id: int) -> void:
-	if !multiplayer.is_server(): return #maybe change this so the server host can play too
+	if !multiplayer.is_server(): return #change this so the server host can spawn and play too
 	
 	var player: Node = network_player.instantiate()
 	player.name = str(id)

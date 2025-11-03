@@ -9,7 +9,7 @@
 [node name="ServerUi" parent="." instance=ExtResource("1_33gsb")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://xbcq2tq6j8fd")
+_spawnable_scenes = PackedStringArray("uid://c6j08mitwwfla")
 spawn_path = NodePath("..")
 script = ExtResource("2_8qbt4")
 network_player = ExtResource("3_8qbt4")
