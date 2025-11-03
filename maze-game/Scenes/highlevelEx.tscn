@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://xbcq2tq6j8fd"]
+
+[ext_resource type="PackedScene" uid="uid://qvtdr6cj7g57" path="res://Scenes/server_ui.tscn" id="1_33gsb"]
+[ext_resource type="Script" uid="uid://bxsvsomsa8gnf" path="res://Scenes/multiplayer_spawner.gd" id="2_8qbt4"]
+[ext_resource type="PackedScene" uid="uid://c6j08mitwwfla" path="res://Scenes/Monster.tscn" id="3_8qbt4"]
+
+[node name="HighlevelEx" type="Node2D"]
+
+[node name="ServerUi" parent="." instance=ExtResource("1_33gsb")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://xbcq2tq6j8fd")
+spawn_path = NodePath("..")
+script = ExtResource("2_8qbt4")
+network_player = ExtResource("3_8qbt4")

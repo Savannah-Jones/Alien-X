@@ -25,6 +25,11 @@ var ambient_music: AudioStreamPlayer2D
 var ambient_pos := 0.0  # store playback position
 
 
+
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
+
+
 func _ready() -> void:
 	last_footprint_pos = global_position
 
@@ -38,7 +43,7 @@ func fade_out_outofsprint_sound():
 
 
 func _physics_process(delta: float) -> void:
-	
+	if !is_multiplayer_authority(): return
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	

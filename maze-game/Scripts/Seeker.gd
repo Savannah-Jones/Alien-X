@@ -13,6 +13,12 @@ var last_direction := Vector2(1,0)
 var _slash_hit_happened := false
 @export var attack_damage := 3.0
 
+
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
+
+
+
 func _ready():
 	#slash_hitbox.connect("area_entered", Callable(self, "_on_slash_area_entered"))
 	slash_hitbox.connect("body_entered", Callable(self, "_on_slash_body_entered"))
@@ -29,6 +35,7 @@ func _on_slash_body_entered(body: Node2D) -> void:
 		play_miss_sound()
 
 func _physics_process(delta: float) -> void:
+	if !is_multiplayer_authority(): return
 
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = direction * SPEED
