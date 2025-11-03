@@ -26,7 +26,7 @@ script = ExtResource("1_ebmjs")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 330.0
+offset_right = 768.0
 offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -37,6 +37,7 @@ layout_mode = 2
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
 handle_input_locally = false
+size = Vector2i(512, 800)
 render_target_update_mode = 4
 
 [node name="Level" parent="HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_qxrlw")]
@@ -44,11 +45,35 @@ position = Vector2(-962, -540)
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
 position = Vector2(0, 1)
-zoom = Vector2(6, 6)
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
+custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="UI" type="Control" parent="HBoxContainer/ColorRect"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 1081.0
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/ColorRect/UI"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_ebmjs")
+min_value = 7.0
+max_value = 9.0
+step = 1.0
+value = 7.0
+show_percentage = false
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -60,58 +85,36 @@ render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
 position = Vector2(0, 1)
-zoom = Vector2(4, 4)
 
-[node name="UI" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/UI"]
-layout_mode = 0
-offset_right = 82.0
-offset_bottom = 9.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_ebmjs")
-max_value = 7.0
-step = 1.0
-show_percentage = false
+[node name="AmbientMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wrm1d")
+parameters/looping = true
 
 [node name="Collectibles" type="Node" parent="."]
 
 [node name="Collectible" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(-390, 512)
-scale = Vector2(0.622244, 0.622244)
 
 [node name="Collectible2" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(-745, 337)
-scale = Vector2(0.622244, 0.622244)
 
 [node name="Collectible3" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(-733, -147)
-scale = Vector2(0.622244, 0.622244)
 
 [node name="Collectible4" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(-1817, 31)
-scale = Vector2(0.622244, 0.622244)
 
 [node name="Collectible5" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(-114, -1010)
-scale = Vector2(0.622244, 0.622244)
 
 [node name="Collectible6" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(585, 401)
-scale = Vector2(0.622244, 0.622244)
 
 [node name="Collectible7" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(956, -319)
-scale = Vector2(0.622244, 0.622244)
 
 [node name="Collectible8" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(-20, 1058)
-scale = Vector2(0.622244, 0.622244)
 
 [node name="Collectible9" parent="Collectibles" instance=ExtResource("3_3dryh")]
 position = Vector2(-144, -474)
-scale = Vector2(0.622244, 0.622244)
-
-[node name="AmbientMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_wrm1d")
-parameters/looping = true

@@ -1,6 +1,6 @@
 extends Node
 
-@onready var objectiveBar = $HBoxContainer/UI/ProgressBar
+@onready var objectiveBar = $HBoxContainer/ColorRect/UI/ProgressBar
 @onready var players := {
 	"1": {
 		viewport = $HBoxContainer/SubViewportContainer/SubViewport,

@@ -35,7 +35,6 @@ func _on_slash_body_entered(body: Node2D) -> void:
 		play_miss_sound()
 
 func _physics_process(delta: float) -> void:
-	if !is_multiplayer_authority(): return
 
 	#give monster arrow keys
 	var direction = Input.get_vector("monster_left", "monster_right", "monster_up", "monster_down")
