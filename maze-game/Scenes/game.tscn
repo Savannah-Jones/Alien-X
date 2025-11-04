@@ -1,8 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://2wifp8jfldnn"]
+[gd_scene load_steps=9 format=3 uid="uid://2wifp8jfldnn"]
 
 [ext_resource type="Script" uid="uid://b7a25tf6mp267" path="res://Scripts/game.gd" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://u2dalbcgahyq" path="res://Scenes/map.tscn" id="2_qxrlw"]
+[ext_resource type="FontFile" uid="uid://ckc1orafvwwvl" path="res://Bore Blasters 16.ttf" id="3_wowpa"]
 [ext_resource type="AudioStream" uid="uid://c331c62ebm2dx" path="res://Music/Ambience/spooky-atomsphere-by-marie-louise-janneman_2-213113.mp3" id="3_wrm1d"]
+[ext_resource type="FontFile" uid="uid://bmx5k8dhbouff" path="res://bloodcrow.ttf" id="4_i6g32"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1l0tm"]
+font = ExtResource("3_wowpa")
+font_size = 15
+outline_size = 2
+outline_color = Color(0.490196, 0.00392157, 0.698039, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebmjs"]
 bg_color = Color(0.323717, 0.592804, 0.181635, 1)
@@ -11,12 +21,15 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.843321, 0.832082, 0.0555937, 1)
-border_blend = true
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_v158k"]
+font = ExtResource("4_i6g32")
+font_size = 18
+font_color = Color(1, 0.152941, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0.3836, 0.0212389, 0.0176969, 1)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ebmjs")
@@ -46,35 +59,41 @@ position = Vector2(-962, -540)
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
 position = Vector2(0, 1)
 
+[node name="Objectives" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer/SubViewport"]
+
+[node name="Collect" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport/Objectives"]
+texture_filter = 1
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 331.0
+offset_bottom = 26.0
+text = "Collect all 9 fuel barrels."
+label_settings = SubResource("LabelSettings_1l0tm")
+
+[node name="Escape" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport/Objectives"]
+visible = false
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Escape to the exit!"
+label_settings = SubResource("LabelSettings_1l0tm")
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/SubViewportContainer/SubViewport/Objectives"]
+texture_filter = 1
+offset_left = 2.0
+offset_top = 19.0
+offset_right = 88.0
+offset_bottom = 23.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ebmjs")
+max_value = 9.0
+step = 1.0
+value = 8.0
+show_percentage = false
+
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
-color = Color(1, 1, 1, 0)
-
-[node name="UI" type="Control" parent="HBoxContainer/ColorRect"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 5.0
-offset_top = 1.0
-offset_right = 5.0
-offset_bottom = 1081.0
-
-[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/ColorRect/UI"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_right = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/fill = SubResource("StyleBoxFlat_ebmjs")
-min_value = 7.0
-max_value = 9.0
-step = 1.0
-value = 7.0
-show_percentage = false
+color = Color(0.124826, 1.19846e-05, 0.125051, 0)
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -87,6 +106,20 @@ render_target_update_mode = 4
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
 position = Vector2(0, 1)
 
+[node name="Objectives" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
+
+[node name="Kill" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Objectives"]
+texture_filter = 1
+offset_left = 4.0
+offset_right = 136.0
+offset_bottom = 23.0
+text = "Kill the human."
+label_settings = SubResource("LabelSettings_v158k")
+
 [node name="AmbientMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_wrm1d")
 parameters/looping = true
+
+[node name="Level" parent="." instance=ExtResource("2_qxrlw")]
+visible = false
+position = Vector2(-962, -540)

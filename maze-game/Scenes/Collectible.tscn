@@ -51,7 +51,9 @@ animations = [{
 size = Vector2(18.9517, 40.1854)
 
 [node name="Collectible" type="Area2D" groups=["Collectibles"]]
+top_level = true
 visibility_layer = 16
+input_pickable = false
 script = ExtResource("1_wqeun")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
