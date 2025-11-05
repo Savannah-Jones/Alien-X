@@ -2,6 +2,8 @@ extends Node
 
 @onready var objectiveBar = $HBoxContainer/SubViewportContainer/SubViewport/Objectives/ProgressBar
 @onready var ambient_music := $AmbientMusic
+var ambient_pos := 0.0
+@onready var chase_music := $MonsterRadius
 @onready var runner := $HBoxContainer/SubViewportContainer/SubViewport/Level/Runner
 @onready var monster := $HBoxContainer/SubViewportContainer/SubViewport/Level/SeekerPlayer
 @onready var escape_area = $HBoxContainer/SubViewportContainer/SubViewport/Level/EscapeArea
@@ -24,6 +26,16 @@ var game_over := false
 func _ready() -> void:
 	await get_tree().process_frame
 	
+	for r in get_tree().get_nodes_in_group("Runner"):
+		print("Runner found: ", r, " in ", r.get_parent().name)
+
+		
+	runner.monster_detected.connect(_on_monster_detected)
+	runner.monster_lost.connect(_on_monster_lost)
+	runner.collected_item.connect(_on_runner_collected)
+
+	
+	
 	#viewports
 	var main_view_size = get_viewport().size  # e.g. (1920,1080)
 	var half_width = int(main_view_size.x / 2)
@@ -40,7 +52,6 @@ func _ready() -> void:
 	
 	#music
 	ambient_music.play()
-	runner.ambient_music = ambient_music
 	
 	escape_area.get_node("CollisionShape2D").disabled = true
 
@@ -49,15 +60,19 @@ func _process(delta: float) -> void:
 	if game_over:
 		return
 	
-	objectiveBar.value = Items.itemsCollected
-	if objectiveBar.value == 9:
-		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Collect.visible = false
-		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Escape.visible = true
-		escape()
 	
 	if runner.current_health <= 0:
 		winCondition("Alien")
 		
+
+func _on_runner_collected(item):
+	Items.itemsCollected += 1
+	print("Collected! Total: ", Items.itemsCollected)
+	objectiveBar.value = Items.itemsCollected
+	if objectiveBar.value == 18:
+		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Collect.visible = false
+		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Escape.visible = true
+		escape()
 
 func escape() -> void:
 	escape_area.enable_area()
@@ -78,3 +93,29 @@ func swapScenes(winner: String) -> void:
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn") #main menu scene for now
 		"Human":
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_monster_detected():
+	print("Monster entered proximity radius!")
+	if ambient_music and ambient_music.playing:
+		ambient_pos = ambient_music.get_playback_position()
+		ambient_music.stop()
+	
+	if not chase_music.playing:
+		chase_music.volume_db = -40
+		chase_music.pitch_scale = randf_range(0.95, 1.05)
+		chase_music.play()
+		var tween = create_tween()
+		tween.tween_property(chase_music, "volume_db", 0, 1.2)  # fade in
+
+func _on_monster_lost():
+	print("Monster left proximity radius!")
+	if chase_music.playing:
+		var tween = create_tween()
+		tween.tween_property(chase_music, "volume_db", -40, 1.0)
+		tween.tween_callback(Callable(chase_music, "stop"))
+		tween.tween_callback(func(): _resume_ambient_music())
+
+func _resume_ambient_music():
+	if ambient_music:
+		ambient_music.play(ambient_pos)

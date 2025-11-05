@@ -126,6 +126,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_bqqt6")
 autoplay = true
+parameters/looping = true
 
 [node name="Options" type="Panel" parent="AudioStreamPlayer"]
 anchors_preset = 8
