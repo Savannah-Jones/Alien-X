@@ -4,6 +4,8 @@ class_name Items
 @onready var anim = $AnimatedSprite2D
 @onready var pickUp = $PickUp
 static var itemsCollected = 0;
+var picked_up := false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,10 +13,14 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	# do something
-	print("DEBUG: Something collided with me.")
+	if picked_up:
+		return
+		
 	if body.name == "Runner":
+		picked_up = true
 		print("DEBUG: Runner collided with me.")
+		
+		
 		var tween = create_tween()
 		tween.tween_property(self, "position", position + Vector2(0,-30), 0.5) # go up
 		

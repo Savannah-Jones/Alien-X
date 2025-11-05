@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://1idm5dxdjbdu"]
+[gd_scene load_steps=11 format=3 uid="uid://1idm5dxdjbdu"]
 
-[ext_resource type="Texture2D" uid="uid://cbwbvoswrovsv" path="res://icon.svg" id="1_4xoli"]
 [ext_resource type="Script" uid="uid://clbeyao2tphu4" path="res://Scripts/collectible.gd" id="1_wqeun"]
 [ext_resource type="Texture2D" uid="uid://du7usx17uimj6" path="res://Art/Map Assets/Collectible_Idle.png" id="3_7nkl6"]
 [ext_resource type="AudioStream" uid="uid://2b434rgx665p" path="res://Music/PickUpSounds/087300_pickupwav-80927.mp3" id="4_omuo5"]
@@ -51,13 +50,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqeun"]
 size = Vector2(18.9517, 40.1854)
 
-[node name="Collectible" type="Area2D"]
+[node name="Collectible" type="Area2D" groups=["Collectibles"]]
+top_level = true
+visibility_layer = 16
+input_pickable = false
 script = ExtResource("1_wqeun")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_4xoli")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

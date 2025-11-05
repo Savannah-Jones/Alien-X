@@ -11,19 +11,16 @@ config_version=5
 [application]
 
 config/name="Alien X"
-run/main_scene="uid://2wifp8jfldnn"
+run/main_scene="uid://cwuj45ugxu7uc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
-
-[autoload]
-
-NetworkHandler="*res://Scripts/network_handler.gd"
 
 [global_group]
 
 Runner=""
 Monster=""
+Collectibles=""
 
 [input]
 
