@@ -31,14 +31,6 @@ func _ready() -> void:
 	players["2"].viewport.size = Vector2(half_width, main_view_size.y)
 	players["2"].viewport.world_2d = players["1"].viewport.world_2d
 	
-	#debug
-	for c in get_tree().get_nodes_in_group("Collectibles"):
-		print("Collectible: ", c.name, " at ", c.global_position)
-		var marker = ColorRect.new()
-		marker.color = Color(1, 0, 0, 0.5)
-		marker.size = Vector2(8, 8)
-		add_child(marker)
-		marker.global_position = c.global_position
 	
 	#cameras
 	for node in players.values():
@@ -62,8 +54,6 @@ func _process(delta: float) -> void:
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Collect.visible = false
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Escape.visible = true
 		escape()
-	
-
 	
 	if runner.current_health <= 0:
 		winCondition("Alien")
