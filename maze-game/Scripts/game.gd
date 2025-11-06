@@ -28,7 +28,7 @@ func _ready() -> void:
 	
 	#debug
 	for r in get_tree().get_nodes_in_group("Runner"):
-		print("Runner found: ", r, " in ", r.get_parent().name)
+		print("DEBUG: Runner found: ", r, " in ", r.get_parent().name)
 
 		
 	runner.monster_detected.connect(_on_monster_detected)
@@ -39,7 +39,7 @@ func _ready() -> void:
 	for area in get_tree().get_nodes_in_group("EscapeArea"):
 		if not area.is_connected("player_escaped", Callable(self, "_on_player_escaped")):
 			area.player_escaped.connect(Callable(self, "_on_player_escaped"))
-			print("Connected escape_area signal from:", area.name)
+			print("DEBUG: Connected escape_area signal from:", area.name)
 
 
 	
@@ -76,7 +76,7 @@ func _on_runner_collected(item):
 	Items.itemsCollected += 1
 	print("Collected! Total: ", Items.itemsCollected)
 	objectiveBar.value = Items.itemsCollected
-	if objectiveBar.value == 2: #change back to 18 after testing.
+	if objectiveBar.value == 18: #value = 2 for testing. change back to 18 after testing.
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Collect.visible = false
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Escape.visible = true
 		escape_area.enable_area()
@@ -95,15 +95,21 @@ func winCondition(winner: String) -> void:
 	swapScenes(winner)
 
 func swapScenes(winner: String) -> void:
+	print(">>> swapScenes called. Winner: ", winner)
+	
 	match winner:
 		"Alien":
-			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn") #main menu scene for now
+			print(">>> Changing to AlienWIn screen for Alien")
+			get_tree().change_scene_to_file("res://Scenes/AlienWin.tscn") #main menu scene for now
 		"Human":
-			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+			print(">>> Changing to HumanWin screen for Human")
+			get_tree().change_scene_to_file("res://Scenes/HumanWin.tscn")
+
+
 
 
 func _on_monster_detected():
-	print("Monster entered proximity radius!")
+	print("DEBUG: Monster entered proximity radius!")
 	if ambient_music and ambient_music.playing:
 		ambient_pos = ambient_music.get_playback_position()
 		ambient_music.stop()
@@ -116,7 +122,7 @@ func _on_monster_detected():
 		tween.tween_property(chase_music, "volume_db", 0, 1.2)  # fade in
 
 func _on_monster_lost():
-	print("Monster left proximity radius!")
+	print("DEBUG: Monster left proximity radius!")
 	if chase_music.playing:
 		var tween = create_tween()
 		tween.tween_property(chase_music, "volume_db", -40, 1.0)

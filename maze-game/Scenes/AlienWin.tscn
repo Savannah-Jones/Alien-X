@@ -1,0 +1,378 @@
+[gd_scene load_steps=26 format=3 uid="uid://c0xuh6t8q5b4g"]
+
+[ext_resource type="Script" uid="uid://br7f0okhuj4tu" path="res://Scripts/alien_win.gd" id="1_dtg1c"]
+[ext_resource type="Texture2D" uid="uid://bw73wn4jp0usd" path="res://Art/Character Assets/MonsterSprite_Idle_Down.png" id="2_6tpmu"]
+[ext_resource type="Texture2D" uid="uid://cixjmexqs746m" path="res://Art/Character Assets/MonsterSprite_Idle_Left.png" id="3_18bv8"]
+[ext_resource type="Texture2D" uid="uid://dbjihwodyxt5u" path="res://Art/Character Assets/MonsterSprite_Idle_Right.png" id="4_l50ov"]
+[ext_resource type="Texture2D" uid="uid://cw8qixhedxe3" path="res://Art/Character Assets/MonsterSprite_Idle_Up.png" id="5_51uhn"]
+[ext_resource type="FontFile" uid="uid://bmx5k8dhbouff" path="res://bloodcrow.ttf" id="6_6tpmu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtke7"]
+atlas = ExtResource("2_6tpmu")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoygu"]
+atlas = ExtResource("2_6tpmu")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxqk0"]
+atlas = ExtResource("2_6tpmu")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65y6e"]
+atlas = ExtResource("3_18bv8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tc33"]
+atlas = ExtResource("3_18bv8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhptg"]
+atlas = ExtResource("3_18bv8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxjmh"]
+atlas = ExtResource("3_18bv8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu4gf"]
+atlas = ExtResource("4_l50ov")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5i7s"]
+atlas = ExtResource("4_l50ov")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1883m"]
+atlas = ExtResource("4_l50ov")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_618gp"]
+atlas = ExtResource("4_l50ov")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p42xn"]
+atlas = ExtResource("5_51uhn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t25pn"]
+atlas = ExtResource("5_51uhn")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc5ko"]
+atlas = ExtResource("5_51uhn")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4i7c2"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_dtke7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoygu")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_nxqk0")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_65y6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tc33")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_qhptg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxjmh")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_uu4gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5i7s")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_1883m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_618gp")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p42xn")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_t25pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qc5ko")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_6tpmu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animations/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animations/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animations:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Animations/Camera2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Animations:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(83, 134)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-42, -65)]
+}
+
+[sub_resource type="Animation" id="Animation_dtg1c"]
+resource_name = "monster_victory"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animations/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animations/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(10, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animations:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(4.5, 4.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Animations/Camera2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -3.76817]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Animations:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(765, 436), Vector2(328, 590)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-385, -218), Vector2(-156, -266)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18bv8"]
+_data = {
+&"RESET": SubResource("Animation_6tpmu"),
+&"monster_victory": SubResource("Animation_dtg1c")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_18bv8"]
+font = ExtResource("6_6tpmu")
+font_size = 36
+font_color = Color(0.00784314, 1, 0, 1)
+outline_size = 2
+outline_color = Color(0.589659, 0.000254419, 0.589931, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="AlienWin" type="Node"]
+script = ExtResource("1_dtg1c")
+
+[node name="BlackBackground" type="ColorRect" parent="."]
+offset_left = -627.0
+offset_top = -410.0
+offset_right = 666.0
+offset_bottom = 386.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -385.0
+offset_top = -218.0
+offset_right = -772.0
+offset_bottom = -430.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.796204, 0, 0.160536, 1)
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_4i7c2")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.515795
+
+[node name="Camera2D" type="Camera2D" parent="Animations"]
+position = Vector2(0, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_18bv8")
+}
+
+[node name="Label" type="Label" parent="Animations"]
+texture_filter = 1
+offset_left = -84.0
+offset_top = -86.0
+offset_right = 114.0
+offset_bottom = -35.0
+text = "YOU DIED!"
+label_settings = SubResource("LabelSettings_18bv8")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -627.0
+offset_top = -410.0
+offset_right = 666.0
+offset_bottom = 386.0
+color = Color(0, 0, 0, 0)
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="animation_finished" from="Animations/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

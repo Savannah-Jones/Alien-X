@@ -91,4 +91,3 @@ human_run={
 2d_physics/layer_1="Human"
 2d_physics/layer_2="Alien"
 2d_physics/layer_3="Map"
-2d_physics/layer_4="Collectibles"
