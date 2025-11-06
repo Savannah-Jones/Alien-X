@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://u2dalbcgahyq"]
+[gd_scene load_steps=33 format=4 uid="uid://u2dalbcgahyq"]
 
 [ext_resource type="Texture2D" uid="uid://6ng5cogwgkxi" path="res://Art/Map Assets/TileSet v1.0.png" id="1_26yhd"]
 [ext_resource type="Shader" uid="uid://b4njv26l05qds" path="res://Scenes/map.gdshader" id="1_olcgw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dbpekoqmw4xf5" path="res://Scripts/escape_area.gd" id="7_4c2oa"]
 [ext_resource type="PackedScene" uid="uid://1idm5dxdjbdu" path="res://Scenes/Collectible.tscn" id="7_w7jjh"]
 [ext_resource type="Script" uid="uid://bm1e2c4t5r57m" path="res://Scripts/healthpack.gd" id="8_6q3n4"]
+[ext_resource type="Texture2D" uid="uid://cbi3muw3u0lja" path="res://Art/Character Assets/light.png" id="11_dlo4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myvm1"]
 texture = ExtResource("1_26yhd")
@@ -6499,10 +6500,1325 @@ blend_mode = 2
 shadow_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_olcgw")
 offset_left = -1994.0
 offset_top = -1221.0
 offset_right = 1974.0
 offset_bottom = 1412.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-362, 151)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-426, 151)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(-618, 279)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(-138, 599)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D5" type="PointLight2D" parent="."]
+position = Vector2(-74, 1047)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D6" type="PointLight2D" parent="."]
+position = Vector2(-42, 343)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D7" type="PointLight2D" parent="."]
+position = Vector2(-202, -9)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D8" type="PointLight2D" parent="."]
+position = Vector2(-138, -9)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D9" type="PointLight2D" parent="."]
+position = Vector2(-1386, 87)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D10" type="PointLight2D" parent="."]
+position = Vector2(-586, -265)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D11" type="PointLight2D" parent="."]
+position = Vector2(-106, -969)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D12" type="PointLight2D" parent="."]
+position = Vector2(-42, -969)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D13" type="PointLight2D" parent="."]
+position = Vector2(438, -521)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D14" type="PointLight2D" parent="."]
+position = Vector2(108, -840)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D15" type="PointLight2D" parent="."]
+position = Vector2(76, -840)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D16" type="PointLight2D" parent="."]
+position = Vector2(-75, -840)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D17" type="PointLight2D" parent="."]
+position = Vector2(-108, -840)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D18" type="PointLight2D" parent="."]
+position = Vector2(-147, -489)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D19" type="PointLight2D" parent="."]
+position = Vector2(-115, -72)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D20" type="PointLight2D" parent="."]
+position = Vector2(-148, -72)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D21" type="PointLight2D" parent="."]
+position = Vector2(-371, -73)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D22" type="PointLight2D" parent="."]
+position = Vector2(-403, -72)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D23" type="PointLight2D" parent="."]
+position = Vector2(-756, -73)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D24" type="PointLight2D" parent="."]
+position = Vector2(-980, -360)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D25" type="PointLight2D" parent="."]
+position = Vector2(-947, 87)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D26" type="PointLight2D" parent="."]
+position = Vector2(-852, 408)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D27" type="PointLight2D" parent="."]
+position = Vector2(-789, 408)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D28" type="PointLight2D" parent="."]
+position = Vector2(-427, 248)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D29" type="PointLight2D" parent="."]
+position = Vector2(-396, 248)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D30" type="PointLight2D" parent="."]
+position = Vector2(-21, 280)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D31" type="PointLight2D" parent="."]
+position = Vector2(12, 280)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D32" type="PointLight2D" parent="."]
+position = Vector2(236, 279)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="PointLight2D33" type="PointLight2D" parent="."]
+position = Vector2(268, 280)
+scale = Vector2(0.0371094, 0.03125)
+color = Color(0.919281, 4.47616e-06, 1.15514e-06, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights" type="PointLight2D" parent="."]
+position = Vector2(-49, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights2" type="PointLight2D" parent="."]
+position = Vector2(-80, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights3" type="PointLight2D" parent="."]
+position = Vector2(-177, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights4" type="PointLight2D" parent="."]
+position = Vector2(-209, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights5" type="PointLight2D" parent="."]
+position = Vector2(-240, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights6" type="PointLight2D" parent="."]
+position = Vector2(-304, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights7" type="PointLight2D" parent="."]
+position = Vector2(-336, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights8" type="PointLight2D" parent="."]
+position = Vector2(-433, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights9" type="PointLight2D" parent="."]
+position = Vector2(-464, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights10" type="PointLight2D" parent="."]
+position = Vector2(-496, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights11" type="PointLight2D" parent="."]
+position = Vector2(-529, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights12" type="PointLight2D" parent="."]
+position = Vector2(-688, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights13" type="PointLight2D" parent="."]
+position = Vector2(-721, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights14" type="PointLight2D" parent="."]
+position = Vector2(-816, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights15" type="PointLight2D" parent="."]
+position = Vector2(-848, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights16" type="PointLight2D" parent="."]
+position = Vector2(-880, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights17" type="PointLight2D" parent="."]
+position = Vector2(-913, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights18" type="PointLight2D" parent="."]
+position = Vector2(-1072, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights19" type="PointLight2D" parent="."]
+position = Vector2(-1104, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights20" type="PointLight2D" parent="."]
+position = Vector2(-1136, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights21" type="PointLight2D" parent="."]
+position = Vector2(-1169, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights22" type="PointLight2D" parent="."]
+position = Vector2(-1200, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights23" type="PointLight2D" parent="."]
+position = Vector2(-1232, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights24" type="PointLight2D" parent="."]
+position = Vector2(-1265, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights25" type="PointLight2D" parent="."]
+position = Vector2(-1296, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights26" type="PointLight2D" parent="."]
+position = Vector2(-1328, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights27" type="PointLight2D" parent="."]
+position = Vector2(-1360, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights28" type="PointLight2D" parent="."]
+position = Vector2(-1392, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights29" type="PointLight2D" parent="."]
+position = Vector2(-1424, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights30" type="PointLight2D" parent="."]
+position = Vector2(-1457, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights31" type="PointLight2D" parent="."]
+position = Vector2(-1488, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights32" type="PointLight2D" parent="."]
+position = Vector2(-1520, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights33" type="PointLight2D" parent="."]
+position = Vector2(-1552, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights34" type="PointLight2D" parent="."]
+position = Vector2(-1585, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights35" type="PointLight2D" parent="."]
+position = Vector2(-1617, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights36" type="PointLight2D" parent="."]
+position = Vector2(-1648, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights37" type="PointLight2D" parent="."]
+position = Vector2(-1680, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights38" type="PointLight2D" parent="."]
+position = Vector2(-1713, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights39" type="PointLight2D" parent="."]
+position = Vector2(-1744, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights40" type="PointLight2D" parent="."]
+position = Vector2(-1776, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights41" type="PointLight2D" parent="."]
+position = Vector2(-1808, -88)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights42" type="PointLight2D" parent="."]
+position = Vector2(-1040, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights43" type="PointLight2D" parent="."]
+position = Vector2(-1009, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights44" type="PointLight2D" parent="."]
+position = Vector2(-913, -375)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights45" type="PointLight2D" parent="."]
+position = Vector2(-880, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights46" type="PointLight2D" parent="."]
+position = Vector2(-849, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights47" type="PointLight2D" parent="."]
+position = Vector2(-816, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights48" type="PointLight2D" parent="."]
+position = Vector2(-785, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights49" type="PointLight2D" parent="."]
+position = Vector2(-753, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights50" type="PointLight2D" parent="."]
+position = Vector2(-720, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights51" type="PointLight2D" parent="."]
+position = Vector2(-688, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights52" type="PointLight2D" parent="."]
+position = Vector2(-656, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights53" type="PointLight2D" parent="."]
+position = Vector2(-624, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights54" type="PointLight2D" parent="."]
+position = Vector2(-592, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights55" type="PointLight2D" parent="."]
+position = Vector2(-560, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights56" type="PointLight2D" parent="."]
+position = Vector2(-528, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights57" type="PointLight2D" parent="."]
+position = Vector2(-496, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights58" type="PointLight2D" parent="."]
+position = Vector2(-464, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights59" type="PointLight2D" parent="."]
+position = Vector2(-432, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights60" type="PointLight2D" parent="."]
+position = Vector2(-400, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights61" type="PointLight2D" parent="."]
+position = Vector2(-369, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights62" type="PointLight2D" parent="."]
+position = Vector2(-336, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights63" type="PointLight2D" parent="."]
+position = Vector2(-305, -601)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights64" type="PointLight2D" parent="."]
+position = Vector2(-272, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights65" type="PointLight2D" parent="."]
+position = Vector2(-177, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights66" type="PointLight2D" parent="."]
+position = Vector2(-208, -247)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights67" type="PointLight2D" parent="."]
+position = Vector2(-176, -856)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights68" type="PointLight2D" parent="."]
+position = Vector2(-144, -856)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights69" type="PointLight2D" parent="."]
+position = Vector2(-47, -856)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights70" type="PointLight2D" parent="."]
+position = Vector2(-15, -856)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights71" type="PointLight2D" parent="."]
+position = Vector2(16, -857)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights72" type="PointLight2D" parent="."]
+position = Vector2(48, -856)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights73" type="PointLight2D" parent="."]
+position = Vector2(144, -856)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights74" type="PointLight2D" parent="."]
+position = Vector2(175, -856)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights75" type="PointLight2D" parent="."]
+position = Vector2(-240, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights76" type="PointLight2D" parent="."]
+position = Vector2(-208, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights77" type="PointLight2D" parent="."]
+position = Vector2(-176, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights78" type="PointLight2D" parent="."]
+position = Vector2(-144, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights79" type="PointLight2D" parent="."]
+position = Vector2(-112, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights80" type="PointLight2D" parent="."]
+position = Vector2(-81, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights81" type="PointLight2D" parent="."]
+position = Vector2(-48, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights82" type="PointLight2D" parent="."]
+position = Vector2(-17, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights83" type="PointLight2D" parent="."]
+position = Vector2(16, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights84" type="PointLight2D" parent="."]
+position = Vector2(47, -1049)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights85" type="PointLight2D" parent="."]
+position = Vector2(81, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights86" type="PointLight2D" parent="."]
+position = Vector2(112, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights87" type="PointLight2D" parent="."]
+position = Vector2(144, -1047)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights88" type="PointLight2D" parent="."]
+position = Vector2(176, -1049)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights89" type="PointLight2D" parent="."]
+position = Vector2(208, -1049)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights90" type="PointLight2D" parent="."]
+position = Vector2(241, -1048)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights91" type="PointLight2D" parent="."]
+position = Vector2(271, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights92" type="PointLight2D" parent="."]
+position = Vector2(303, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights93" type="PointLight2D" parent="."]
+position = Vector2(335, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights94" type="PointLight2D" parent="."]
+position = Vector2(368, -601)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights95" type="PointLight2D" parent="."]
+position = Vector2(400, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights96" type="PointLight2D" parent="."]
+position = Vector2(432, -601)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights97" type="PointLight2D" parent="."]
+position = Vector2(464, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights98" type="PointLight2D" parent="."]
+position = Vector2(496, -600)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights99" type="PointLight2D" parent="."]
+position = Vector2(527, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights100" type="PointLight2D" parent="."]
+position = Vector2(559, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights101" type="PointLight2D" parent="."]
+position = Vector2(592, -377)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights102" type="PointLight2D" parent="."]
+position = Vector2(623, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights103" type="PointLight2D" parent="."]
+position = Vector2(656, -377)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights104" type="PointLight2D" parent="."]
+position = Vector2(688, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights105" type="PointLight2D" parent="."]
+position = Vector2(719, -377)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights106" type="PointLight2D" parent="."]
+position = Vector2(751, -377)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights107" type="PointLight2D" parent="."]
+position = Vector2(784, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights108" type="PointLight2D" parent="."]
+position = Vector2(815, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights109" type="PointLight2D" parent="."]
+position = Vector2(848, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights110" type="PointLight2D" parent="."]
+position = Vector2(879, -377)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights111" type="PointLight2D" parent="."]
+position = Vector2(911, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights112" type="PointLight2D" parent="."]
+position = Vector2(944, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights113" type="PointLight2D" parent="."]
+position = Vector2(975, -376)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights114" type="PointLight2D" parent="."]
+position = Vector2(584, -194)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights115" type="PointLight2D" parent="."]
+position = Vector2(608, -194)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights116" type="PointLight2D" parent="."]
+position = Vector2(632, -194)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights117" type="PointLight2D" parent="."]
+position = Vector2(648, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights118" type="PointLight2D" parent="."]
+position = Vector2(672, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights119" type="PointLight2D" parent="."]
+position = Vector2(696, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights120" type="PointLight2D" parent="."]
+position = Vector2(648, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights121" type="PointLight2D" parent="."]
+position = Vector2(672, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights122" type="PointLight2D" parent="."]
+position = Vector2(696, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights123" type="PointLight2D" parent="."]
+position = Vector2(648, 190)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights124" type="PointLight2D" parent="."]
+position = Vector2(672, 190)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights125" type="PointLight2D" parent="."]
+position = Vector2(696, 190)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights126" type="PointLight2D" parent="."]
+position = Vector2(584, 285)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights127" type="PointLight2D" parent="."]
+position = Vector2(608, 286)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights128" type="PointLight2D" parent="."]
+position = Vector2(632, 286)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights129" type="PointLight2D" parent="."]
+position = Vector2(1032, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights130" type="PointLight2D" parent="."]
+position = Vector2(1056, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights131" type="PointLight2D" parent="."]
+position = Vector2(1080, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights132" type="PointLight2D" parent="."]
+position = Vector2(1032, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights133" type="PointLight2D" parent="."]
+position = Vector2(1056, -35)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights134" type="PointLight2D" parent="."]
+position = Vector2(1080, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights135" type="PointLight2D" parent="."]
+position = Vector2(1007, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights136" type="PointLight2D" parent="."]
+position = Vector2(1040, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights137" type="PointLight2D" parent="."]
+position = Vector2(1072, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights138" type="PointLight2D" parent="."]
+position = Vector2(1199, -119)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights139" type="PointLight2D" parent="."]
+position = Vector2(1232, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights140" type="PointLight2D" parent="."]
+position = Vector2(1264, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights141" type="PointLight2D" parent="."]
+position = Vector2(1296, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights142" type="PointLight2D" parent="."]
+position = Vector2(1328, -121)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights143" type="PointLight2D" parent="."]
+position = Vector2(1455, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights144" type="PointLight2D" parent="."]
+position = Vector2(1488, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights145" type="PointLight2D" parent="."]
+position = Vector2(1519, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights146" type="PointLight2D" parent="."]
+position = Vector2(1336, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights147" type="PointLight2D" parent="."]
+position = Vector2(1313, -33)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights148" type="PointLight2D" parent="."]
+position = Vector2(1288, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights149" type="PointLight2D" parent="."]
+position = Vector2(1288, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights150" type="PointLight2D" parent="."]
+position = Vector2(1312, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights151" type="PointLight2D" parent="."]
+position = Vector2(1336, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights152" type="PointLight2D" parent="."]
+position = Vector2(1672, 30)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights153" type="PointLight2D" parent="."]
+position = Vector2(1696, 29)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights154" type="PointLight2D" parent="."]
+position = Vector2(1720, 29)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights155" type="PointLight2D" parent="."]
+position = Vector2(1672, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights156" type="PointLight2D" parent="."]
+position = Vector2(1696, -34)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights157" type="PointLight2D" parent="."]
+position = Vector2(1720, -35)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights158" type="PointLight2D" parent="."]
+position = Vector2(1712, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights159" type="PointLight2D" parent="."]
+position = Vector2(1744, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights160" type="PointLight2D" parent="."]
+position = Vector2(1583, -120)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights161" type="PointLight2D" parent="."]
+position = Vector2(1552, -121)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights162" type="PointLight2D" parent="."]
+position = Vector2(304, 263)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights163" type="PointLight2D" parent="."]
+position = Vector2(208, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights164" type="PointLight2D" parent="."]
+position = Vector2(175, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights165" type="PointLight2D" parent="."]
+position = Vector2(145, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights166" type="PointLight2D" parent="."]
+position = Vector2(112, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights167" type="PointLight2D" parent="."]
+position = Vector2(47, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights168" type="PointLight2D" parent="."]
+position = Vector2(-49, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights169" type="PointLight2D" parent="."]
+position = Vector2(-80, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights170" type="PointLight2D" parent="."]
+position = Vector2(-112, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights171" type="PointLight2D" parent="."]
+position = Vector2(-144, 264)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights172" type="PointLight2D" parent="."]
+position = Vector2(-271, 232)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights173" type="PointLight2D" parent="."]
+position = Vector2(-304, 232)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights174" type="PointLight2D" parent="."]
+position = Vector2(-334, 232)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights175" type="PointLight2D" parent="."]
+position = Vector2(-368, 232)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights176" type="PointLight2D" parent="."]
+position = Vector2(-464, 231)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights177" type="PointLight2D" parent="."]
+position = Vector2(-495, 232)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights178" type="PointLight2D" parent="."]
+position = Vector2(-752, 200)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights179" type="PointLight2D" parent="."]
+position = Vector2(-785, 199)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights180" type="PointLight2D" parent="."]
+position = Vector2(-817, 199)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights181" type="PointLight2D" parent="."]
+position = Vector2(-881, 200)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights182" type="PointLight2D" parent="."]
+position = Vector2(-912, 392)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights183" type="PointLight2D" parent="."]
+position = Vector2(-880, 392)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights184" type="PointLight2D" parent="."]
+position = Vector2(-817, 392)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights185" type="PointLight2D" parent="."]
+position = Vector2(-752, 391)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
+
+[node name="Blue_Lights186" type="PointLight2D" parent="."]
+position = Vector2(-720, 392)
+scale = Vector2(0.0820312, 0.0830079)
+color = Color(0.341176, 0.835294, 1, 1)
+texture = ExtResource("11_dlo4w")
 
 [connection signal="body_entered" from="EscapeArea" to="EscapeArea" method="_on_body_entered"]
