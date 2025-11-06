@@ -231,6 +231,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="SeekerPlayer" type="CharacterBody2D" groups=["Monster"]]
+collision_layer = 2
 script = ExtResource("1_lywod")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]

@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgmpfcbuelds6"]
+
+[ext_resource type="Texture2D" uid="uid://drtrm6ehixo13" path="res://Art/Map Assets/Spaceship.png" id="1_0tdds"]
+[ext_resource type="Script" uid="uid://8nyth1rywjlx" path="res://Scripts/human_win.gd" id="1_djoqm"]
+[ext_resource type="FontFile" uid="uid://bmx5k8dhbouff" path="res://bloodcrow.ttf" id="2_8kr24"]
+[ext_resource type="Texture2D" uid="uid://dwrikaupm7y7g" path="res://Art/Map Assets/Nebula Blue.png" id="2_djoqm"]
+[ext_resource type="Texture2D" uid="uid://d21bvxm8kctvh" path="res://Art/Map Assets/Stars-Big_1_2_PC.png" id="3_clf8i"]
+
+[sub_resource type="Animation" id="Animation_djoqm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Space:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_8kr24"]
+resource_name = "Ship_Flying"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 40), Vector2(0, -40), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.6, 2.33333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 40), Vector2(0, -40), Vector2(0, -22), Vector2(0, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Space:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.16667, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, -40), Vector2(0, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clf8i"]
+_data = {
+&"RESET": SubResource("Animation_djoqm"),
+&"Ship_Flying": SubResource("Animation_8kr24")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_djoqm"]
+font = ExtResource("2_8kr24")
+font_size = 62
+outline_size = 3
+outline_color = Color(0.854902, 0.717647, 0.12549, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="HumanWin" type="Node"]
+script = ExtResource("1_djoqm")
+
+[node name="Space" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("2_djoqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Space"]
+texture = ExtResource("3_clf8i")
+
+[node name="Ship" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_0tdds")
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+zoom = Vector2(0.7, 0.7)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ship"]
+libraries = {
+&"": SubResource("AnimationLibrary_clf8i")
+}
+
+[node name="Label" type="Label" parent="Ship"]
+offset_left = -245.0
+offset_top = 382.0
+offset_right = 277.0
+offset_bottom = 456.0
+text = "HUMAN ESCAPES!"
+label_settings = SubResource("LabelSettings_djoqm")
+
+[connection signal="animation_finished" from="Ship/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

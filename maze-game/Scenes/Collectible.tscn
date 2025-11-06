@@ -53,6 +53,7 @@ size = Vector2(18.9517, 40.1854)
 [node name="Collectible" type="Area2D" groups=["Collectibles"]]
 top_level = true
 visibility_layer = 16
+collision_layer = 4
 input_pickable = false
 script = ExtResource("1_wqeun")
 
@@ -70,5 +71,6 @@ shape = SubResource("RectangleShape2D_wqeun")
 
 [node name="PickUp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_omuo5")
+volume_db = 3.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
