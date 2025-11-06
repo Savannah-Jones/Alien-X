@@ -130,4 +130,6 @@ offset_bottom = 456.0
 text = "HUMAN ESCAPES!"
 label_settings = SubResource("LabelSettings_djoqm")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="animation_finished" from="Ship/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

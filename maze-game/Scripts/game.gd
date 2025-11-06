@@ -76,7 +76,7 @@ func _on_runner_collected(item):
 	Items.itemsCollected += 1
 	print("Collected! Total: ", Items.itemsCollected)
 	objectiveBar.value = Items.itemsCollected
-	if objectiveBar.value == 18: #value = 2 for testing. change back to 18 after testing.
+	if objectiveBar.value == 2: #value = 2 for testing. change back to 18 after testing.
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Collect.visible = false
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Escape.visible = true
 		escape_area.enable_area()
@@ -100,11 +100,21 @@ func swapScenes(winner: String) -> void:
 	match winner:
 		"Alien":
 			print(">>> Changing to AlienWIn screen for Alien")
-			get_tree().change_scene_to_file("res://Scenes/AlienWin.tscn") #main menu scene for now
+			call_deferred("change_scene_deferred", "res://Scenes/AlienWin.tscn")
 		"Human":
 			print(">>> Changing to HumanWin screen for Human")
-			get_tree().change_scene_to_file("res://Scenes/HumanWin.tscn")
+			call_deferred("change_scene_deferred", "res://Scenes/HumanWin.tscn")
 
+func change_scene_deferred(path: String) -> void:
+	# Reset static / global variables
+	Items.itemsCollected = 0
+	
+	for area in get_tree().get_nodes_in_group("EscapeArea"):
+		area.enabled = false
+		area.get_node("CollisionShape2D").disabled = true
+
+	# Now change the scene
+	get_tree().change_scene_to_file(path)
 
 
 

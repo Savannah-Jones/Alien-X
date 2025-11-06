@@ -6426,12 +6426,12 @@ tile_set = SubResource("TileSet_6q3n4")
 
 [node name="Runner" parent="." instance=ExtResource("5_np2xp")]
 position = Vector2(-1249, 32)
+scale = Vector2(0.8, 0.8)
 
 [node name="SeekerPlayer" parent="." instance=ExtResource("6_w7jjh")]
 position = Vector2(562, 20)
 
 [node name="EscapeArea" type="Area2D" parent="." groups=["EscapeArea"]]
-collision_layer = 6
 input_pickable = false
 script = ExtResource("7_4c2oa")
 
