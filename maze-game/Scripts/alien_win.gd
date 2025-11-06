@@ -1,6 +1,7 @@
 extends Node
 
 func _on_ready() -> void:
+	#add audio here (2secs long)
 	$Animations/AnimationPlayer.play("monster_victory")
 
 

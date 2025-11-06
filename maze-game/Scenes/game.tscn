@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://2wifp8jfldnn"]
+[gd_scene load_steps=12 format=3 uid="uid://2wifp8jfldnn"]
 
 [ext_resource type="Script" uid="uid://b7a25tf6mp267" path="res://Scripts/game.gd" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://u2dalbcgahyq" path="res://Scenes/map.tscn" id="2_qxrlw"]
@@ -23,14 +23,29 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.843321, 0.832082, 0.0555937, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_i6g32"]
+font = ExtResource("3_wowpa")
+outline_size = 2
+outline_color = Color(0.762475, 0.000448964, 0.762851, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_v158k"]
 font = ExtResource("4_i6g32")
-font_size = 18
+font_size = 23
 font_color = Color(1, 0.152941, 0, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 3
 shadow_color = Color(0.3836, 0.0212389, 0.0176969, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h4fw4"]
+line_spacing = 2.0
+font = ExtResource("3_wowpa")
+font_size = 15
+font_color = Color(0.816131, 0.139367, 0, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ebmjs")
@@ -59,6 +74,7 @@ position = Vector2(-962, -540)
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
 position = Vector2(0, 1)
+zoom = Vector2(2, 2)
 
 [node name="Objectives" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer/SubViewport"]
 
@@ -68,7 +84,8 @@ offset_left = 2.0
 offset_top = 3.0
 offset_right = 331.0
 offset_bottom = 26.0
-text = "Collect all 9 fuel barrels."
+text = "Collect all 9 fuel barrels
+to power the ship"
 label_settings = SubResource("LabelSettings_1l0tm")
 
 [node name="Escape" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport/Objectives"]
@@ -90,6 +107,15 @@ max_value = 18.0
 step = 1.0
 show_percentage = false
 
+[node name="Controls" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport/Objectives"]
+offset_left = 2.0
+offset_top = 613.0
+offset_right = 197.0
+offset_bottom = 648.0
+text = "w,a,s,d to move
+shift to run"
+label_settings = SubResource("LabelSettings_i6g32")
+
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
@@ -105,16 +131,28 @@ render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
 position = Vector2(0, 1)
+zoom = Vector2(2.2, 2.2)
 
 [node name="Objectives" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
 
 [node name="Kill" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Objectives"]
 texture_filter = 1
 offset_left = 4.0
-offset_right = 136.0
-offset_bottom = 23.0
-text = "Kill the human."
+offset_top = 3.0
+offset_right = 224.0
+offset_bottom = 26.0
+text = "KILL the human"
 label_settings = SubResource("LabelSettings_v158k")
+
+[node name="Controls" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Objectives"]
+texture_filter = 1
+offset_left = 339.0
+offset_top = 613.0
+offset_right = 571.0
+offset_bottom = 670.0
+text = "arrows keys to move
+/ to attack"
+label_settings = SubResource("LabelSettings_h4fw4")
 
 [node name="AmbientMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_wrm1d")
