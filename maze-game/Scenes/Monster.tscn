@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://c6j08mitwwfla"]
+[gd_scene load_steps=46 format=3 uid="uid://c6j08mitwwfla"]
 
 [ext_resource type="Script" uid="uid://c210e5gasj52a" path="res://Scripts/Seeker.gd" id="1_lywod"]
 [ext_resource type="Texture2D" uid="uid://bw73wn4jp0usd" path="res://Art/Character Assets/MonsterSprite_Idle_Down.png" id="3_65ogj"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dct5ppjk8qs3l" path="res://Music/MonsterSounds/simple-whoosh-382724.mp3" id="12_dtke7"]
 [ext_resource type="AudioStream" uid="uid://bsx83hdiisxwo" path="res://Music/MonsterSounds/whoosh-effect-382717.mp3" id="13_uoygu"]
 [ext_resource type="AudioStream" uid="uid://d04vh6ok3qvcx" path="res://Music/MonsterSounds/whoosh-motion-405445.mp3" id="14_nxqk0"]
+[ext_resource type="Texture2D" uid="uid://cbi3muw3u0lja" path="res://Art/Character Assets/light.png" id="15_yxfhb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtke7"]
 atlas = ExtResource("3_65ogj")
@@ -309,5 +310,11 @@ stream = ExtResource("13_uoygu")
 
 [node name="Miss3" type="AudioStreamPlayer2D" parent="SlashSounds"]
 stream = ExtResource("14_nxqk0")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.1, 0.1)
+color = Color(0, 0.956863, 0.556863, 1)
+energy = 0.5
+texture = ExtResource("15_yxfhb")
 
 [connection signal="animation_finished" from="Slash" to="." method="_on_slash_done"]

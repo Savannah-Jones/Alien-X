@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://d4go6lmobu85h"]
+[gd_scene load_steps=43 format=3 uid="uid://d4go6lmobu85h"]
 
 [ext_resource type="Script" uid="uid://cdc07sdm4lpy4" path="res://Scripts/Runner.gd" id="1_j1som"]
 [ext_resource type="PackedScene" uid="uid://d007wxbdk3cra" path="res://Scenes/footsteps.tscn" id="2_p81ih"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cds6x7xvf51fy" path="res://Music/PlayerSounds/man-death-scream-186763.mp3" id="7_wr6ry"]
 [ext_resource type="AudioStream" uid="uid://bsxvs40kh61rb" path="res://Music/PlayerSounds/normal-breath-loop-400151.mp3" id="8_p81ih"]
 [ext_resource type="AudioStream" uid="uid://bvr0ssqt031kb" path="res://Music/MonsterSounds/114-low-impact-420335.mp3" id="9_ukf3h"]
+[ext_resource type="Texture2D" uid="uid://cbi3muw3u0lja" path="res://Art/Character Assets/light.png" id="13_wr6ry"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnpl4"]
 atlas = ExtResource("3_wr6ry")
@@ -303,6 +304,12 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MonsterDetectRadius"]
 shape = SubResource("CircleShape2D_p81ih")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.3, 0.3)
+color = Color(0.920817, 0.87524, 0.158901, 0.807843)
+energy = 1.5
+texture = ExtResource("13_wr6ry")
 
 [connection signal="body_entered" from="MonsterDetectRadius" to="." method="_on_monster_detect_radius_body_entered"]
 [connection signal="body_exited" from="MonsterDetectRadius" to="." method="_on_monster_detect_radius_body_exited"]
