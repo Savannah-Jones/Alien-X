@@ -19,13 +19,14 @@ var ambient_pos := 0.0
 		player = monster
 	}
 }
-
+#@onready var escape_area: EscapeArea = players["1"].player.get_parent().get_node("EscapeArea")
 var game_over := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
 	
+	#debug
 	for r in get_tree().get_nodes_in_group("Runner"):
 		print("Runner found: ", r, " in ", r.get_parent().name)
 
@@ -33,6 +34,13 @@ func _ready() -> void:
 	runner.monster_detected.connect(_on_monster_detected)
 	runner.monster_lost.connect(_on_monster_lost)
 	runner.collected_item.connect(_on_runner_collected)
+	
+	
+	for area in get_tree().get_nodes_in_group("EscapeArea"):
+		if not area.is_connected("player_escaped", Callable(self, "_on_player_escaped")):
+			area.player_escaped.connect(Callable(self, "_on_player_escaped"))
+			print("Connected escape_area signal from:", area.name)
+
 
 	
 	
@@ -60,7 +68,6 @@ func _process(delta: float) -> void:
 	if game_over:
 		return
 	
-	
 	if runner.current_health <= 0:
 		winCondition("Alien")
 		
@@ -69,17 +76,17 @@ func _on_runner_collected(item):
 	Items.itemsCollected += 1
 	print("Collected! Total: ", Items.itemsCollected)
 	objectiveBar.value = Items.itemsCollected
-	if objectiveBar.value == 18:
+	if objectiveBar.value == 2: #change back to 18 after testing.
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Collect.visible = false
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Escape.visible = true
-		escape()
+		escape_area.enable_area()
 
-func escape() -> void:
-	escape_area.enable_area()
-	if not escape_area.is_connected("player_escaped", Callable(self, "_on_player_escaped")):
-		escape_area.player_escaped.connect(Callable(self, "_on_player_escaped"))
 
 func _on_player_escaped(winner: String) -> void:
+	if game_over:
+		print("DEBUG: Game already over, ignoring duplicate escape signal.")
+		return
+	print("Human wins.")
 	winCondition(winner)
 
 func winCondition(winner: String) -> void:

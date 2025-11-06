@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://uwgyfltbnpib" path="res://Art/Map Assets/spaceships.png" id="4_myvm1"]
 [ext_resource type="PackedScene" uid="uid://d4go6lmobu85h" path="res://Scenes/Runner.tscn" id="5_np2xp"]
 [ext_resource type="PackedScene" uid="uid://c6j08mitwwfla" path="res://Scenes/Monster.tscn" id="6_w7jjh"]
-[ext_resource type="Script" uid="uid://dbpekoqmw4xf5" path="res://Scenes/escape_area.gd" id="7_4c2oa"]
+[ext_resource type="Script" uid="uid://dbpekoqmw4xf5" path="res://Scripts/escape_area.gd" id="7_4c2oa"]
 [ext_resource type="PackedScene" uid="uid://1idm5dxdjbdu" path="res://Scenes/Collectible.tscn" id="7_w7jjh"]
-[ext_resource type="Script" uid="uid://bm1e2c4t5r57m" path="res://Scenes/healthpack.gd" id="8_6q3n4"]
+[ext_resource type="Script" uid="uid://bm1e2c4t5r57m" path="res://Scripts/healthpack.gd" id="8_6q3n4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myvm1"]
 texture = ExtResource("1_26yhd")
@@ -6430,7 +6430,8 @@ position = Vector2(-1249, 32)
 [node name="SeekerPlayer" parent="." instance=ExtResource("6_w7jjh")]
 position = Vector2(562, 20)
 
-[node name="EscapeArea" type="Area2D" parent="."]
+[node name="EscapeArea" type="Area2D" parent="." groups=["EscapeArea"]]
+collision_layer = 6
 input_pickable = false
 script = ExtResource("7_4c2oa")
 
