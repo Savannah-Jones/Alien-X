@@ -2,8 +2,7 @@ extends CharacterBody2D
 class_name Monster
 
 
-const SPEED = 400.0
-const SPRINT_SPEED = 600
+const SPEED = 262.0
 var last_direction := Vector2(1,0)
 @onready var anim = $Animations
 @onready var slash_effect = $Slash

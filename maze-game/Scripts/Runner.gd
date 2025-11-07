@@ -1,13 +1,13 @@
 extends CharacterBody2D
 class_name Runner
 
-const SPEED = 300.0
-const SPRINT_SPEED = 500
+const SPEED = 250.0
+const SPRINT_SPEED = 375
 var last_direction := Vector2(1,0)
 
 @export var footprint_scene: PackedScene
 @export var distance_between_footprints := 64.0
-@export var footprint_lifetime := 8.0
+@export var footprint_lifetime := 6.5
 var last_footprint_pos: Vector2
 signal collected_item(item)
 
@@ -143,7 +143,7 @@ func play_walk_animation(direction):
 func play_idle_animation(direction):
 	if direction.x > 0:
 		$AnimatedSprite2D.play("idle_right")
-	elif direction.x > 0:
+	elif direction.x < 0:
 		$AnimatedSprite2D.play("idle_left")
 	elif direction.y > 0:
 		$AnimatedSprite2D.play("idle_down")
