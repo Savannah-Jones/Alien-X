@@ -13,8 +13,6 @@ var _slash_hit_happened := false
 @export var attack_damage := 3.0
 
 
-
-
 func _ready():
 	#slash_hitbox.connect("area_entered", Callable(self, "_on_slash_area_entered"))
 	slash_hitbox.connect("body_entered", Callable(self, "_on_slash_body_entered"))
