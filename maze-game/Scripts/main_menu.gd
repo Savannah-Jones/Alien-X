@@ -5,6 +5,7 @@ extends Control
 
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	main_buttons.visible = true
 	options.visible = false
 
