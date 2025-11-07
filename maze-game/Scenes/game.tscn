@@ -144,7 +144,8 @@ offset_bottom = 26.0
 text = "KILL the human"
 label_settings = SubResource("LabelSettings_v158k")
 
-[node name="Controls" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Objectives"]
+[node name="Pc-Controls" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Objectives"]
+visible = false
 texture_filter = 1
 offset_left = 339.0
 offset_top = 613.0
@@ -152,6 +153,16 @@ offset_right = 571.0
 offset_bottom = 670.0
 text = "arrows keys to move
 / to attack"
+label_settings = SubResource("LabelSettings_h4fw4")
+
+[node name="Xb-Control" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Objectives"]
+texture_filter = 1
+offset_left = 312.0
+offset_top = 613.0
+offset_right = 569.0
+offset_bottom = 670.0
+text = "Left Joystick to move
+RT to attack"
 label_settings = SubResource("LabelSettings_h4fw4")
 
 [node name="AmbientMusic" type="AudioStreamPlayer2D" parent="."]
