@@ -6406,9 +6406,9 @@ normalize = false
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_olcgw"]
 shader = ExtResource("1_olcgw")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_olcgw")
-shader_parameter/smoke_color = Color(0.169836, 0.304967, 0.30544, 1)
+shader_parameter/smoke_color = Color(0.511812, 0.40055, 0.779024, 1)
 shader_parameter/distortion_speed = 0.2
-shader_parameter/density = 0.84
+shader_parameter/density = 0.418
 
 [node name="Map-floor" type="TileMapLayer"]
 texture_filter = 1
@@ -6499,12 +6499,12 @@ energy = 0.85
 blend_mode = 2
 shadow_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Fog" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_olcgw")
-offset_left = -1994.0
-offset_top = -1221.0
-offset_right = 1974.0
-offset_bottom = 1412.0
+offset_left = -1887.0
+offset_top = -1079.0
+offset_right = 1913.0
+offset_bottom = 1264.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-362, 151)

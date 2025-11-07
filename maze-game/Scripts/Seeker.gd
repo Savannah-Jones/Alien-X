@@ -37,8 +37,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	#normalize the vector to account for diagonal movement later maybe?
 	if direction.length() > 0:
+		direction = direction.normalized() #<---if something breaks later, remove
 		last_direction = direction
-		#play_walk_animation(direction)
 		play_idle_animation(direction)
 		#print("Debug Direction: ", direction)
 	else:
