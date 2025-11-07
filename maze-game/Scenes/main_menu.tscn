@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://6qlohigse765" path="res://menu.png" id="2_bqqt6"]
 [ext_resource type="AudioStream" uid="uid://dm60xuq3y73e8" path="res://Music/main menu song.mp3" id="3_bqqt6"]
 [ext_resource type="Script" uid="uid://bfmhe5bo2x65q" path="res://Scripts/audio_control.gd" id="4_wu84c"]
-[ext_resource type="Script" uid="uid://dm20yli8ljv14" path="res://Scripts/full_screen_control.gd" id="5_8ln24"]
 [ext_resource type="FontFile" uid="uid://bmx5k8dhbouff" path="res://bloodcrow.ttf" id="6_rtw2f"]
 [ext_resource type="AudioStream" uid="uid://nj82bs5whgh3" path="res://Music/Ambience/distress-signal-107676.mp3" id="7_cp0ys"]
+[ext_resource type="PackedScene" uid="uid://b0lcr5jqhhmsw" path="res://Scenes/animatable_body_2d.tscn" id="8_yhxw7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_06t4h"]
 
@@ -188,17 +188,6 @@ value = 1.0
 script = ExtResource("4_wu84c")
 audio_bus_name = "Music"
 
-[node name="FullScreenControl" type="CheckButton" parent="AudioStreamPlayer/Options"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 107.0
-offset_right = 332.0
-offset_bottom = 138.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_font_sizes/font_size = 37
-text = "Full Screen"
-script = ExtResource("5_8ln24")
-
 [node name="Label2" type="Label" parent="AudioStreamPlayer/Options"]
 layout_mode = 0
 offset_left = 379.0
@@ -227,9 +216,10 @@ stream = ExtResource("7_cp0ys")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.8
 
+[node name="Sprite2D" parent="." instance=ExtResource("8_yhxw7")]
+
 [connection signal="pressed" from="Node/MainButtons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node/MainButtons/Button2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Node/MainButtons/Button3" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="AudioStreamPlayer/Options/Label/Back" to="." method="_on_back_options_pressed"]
 [connection signal="value_changed" from="AudioStreamPlayer/Options/AudioControl" to="AudioStreamPlayer/Options/AudioControl" method="_on_value_changed"]
-[connection signal="toggled" from="AudioStreamPlayer/Options/FullScreenControl" to="AudioStreamPlayer/Options/FullScreenControl" method="_on_toggled"]
