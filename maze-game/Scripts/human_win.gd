@@ -3,6 +3,7 @@ extends Node
 
 func _ready() -> void:
 	#add audio here (3secs long)
+	$AudioStreamPlayer.play()
 	$Ship/AnimationPlayer.play("Ship_Flying")
 	
 

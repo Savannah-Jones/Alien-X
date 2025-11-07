@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ghs1nqiu00ix"
+path="res://.godot/imported/sci-fi-sound-effect-designed-circuits-sfx-tonal-15-202059.mp3-47709eab5cc42651a37916995e133f6e.mp3str"
+
+[deps]
+
+source_file="res://Art/Map Assets/sci-fi-sound-effect-designed-circuits-sfx-tonal-15-202059.mp3"
+dest_files=["res://.godot/imported/sci-fi-sound-effect-designed-circuits-sfx-tonal-15-202059.mp3-47709eab5cc42651a37916995e133f6e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

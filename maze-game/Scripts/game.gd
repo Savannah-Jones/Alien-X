@@ -76,7 +76,7 @@ func _on_runner_collected(item):
 	Items.itemsCollected += 1
 	print("Collected! Total: ", Items.itemsCollected)
 	objectiveBar.value = Items.itemsCollected
-	if objectiveBar.value == 2: #value = 2 for testing. change back to 18 after testing.
+	if objectiveBar.value == 18: #value = 2 for testing. change back to 18 after testing.
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Collect.visible = false
 		$HBoxContainer/SubViewportContainer/SubViewport/Objectives/Escape.visible = true
 		escape_area.enable_area()
