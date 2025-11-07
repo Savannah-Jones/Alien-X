@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwuj45ugxu7uc"]
+[gd_scene load_steps=16 format=3 uid="uid://cwuj45ugxu7uc"]
 
 [ext_resource type="Script" uid="uid://cw5wkxq6l02bt" path="res://Scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://6qlohigse765" path="res://menu.png" id="2_bqqt6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bfmhe5bo2x65q" path="res://Scripts/audio_control.gd" id="4_wu84c"]
 [ext_resource type="Script" uid="uid://dm20yli8ljv14" path="res://Scripts/full_screen_control.gd" id="5_8ln24"]
 [ext_resource type="FontFile" uid="uid://bmx5k8dhbouff" path="res://bloodcrow.ttf" id="6_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://nj82bs5whgh3" path="res://Music/Ambience/distress-signal-107676.mp3" id="7_cp0ys"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_06t4h"]
 
@@ -219,6 +220,12 @@ theme_override_constants/shadow_offset_x = 10
 theme_override_fonts/font = ExtResource("6_rtw2f")
 theme_override_font_sizes/font_size = 129
 text = "Alien X"
+
+[node name="Starting_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cp0ys")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.8
 
 [connection signal="pressed" from="Node/MainButtons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node/MainButtons/Button2" to="." method="_on_settings_pressed"]

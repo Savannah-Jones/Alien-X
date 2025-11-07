@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgmpfcbuelds6"]
+[gd_scene load_steps=11 format=3 uid="uid://bgmpfcbuelds6"]
 
 [ext_resource type="Texture2D" uid="uid://drtrm6ehixo13" path="res://Art/Map Assets/Spaceship.png" id="1_0tdds"]
 [ext_resource type="Script" uid="uid://8nyth1rywjlx" path="res://Scripts/human_win.gd" id="1_djoqm"]
 [ext_resource type="FontFile" uid="uid://bmx5k8dhbouff" path="res://bloodcrow.ttf" id="2_8kr24"]
 [ext_resource type="Texture2D" uid="uid://dwrikaupm7y7g" path="res://Art/Map Assets/Nebula Blue.png" id="2_djoqm"]
 [ext_resource type="Texture2D" uid="uid://d21bvxm8kctvh" path="res://Art/Map Assets/Stars-Big_1_2_PC.png" id="3_clf8i"]
+[ext_resource type="AudioStream" uid="uid://cmmjybqqf32dv" path="res://Music/Ambience/sci-fi-sound-effect-designed-circuits-sfx-tonal-15-202059.mp3" id="6_sggvp"]
 
 [sub_resource type="Animation" id="Animation_djoqm"]
 length = 0.001
@@ -131,5 +132,6 @@ text = "HUMAN ESCAPES!"
 label_settings = SubResource("LabelSettings_djoqm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_sggvp")
 
 [connection signal="animation_finished" from="Ship/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

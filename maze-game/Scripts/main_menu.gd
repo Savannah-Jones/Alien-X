@@ -10,6 +10,9 @@ func _ready():
 
 func _on_start_pressed() -> void:
 	#This is where you would put the main scene level for the game in the ("").
+	$Starting_Sound.play()
+	$Timer.start()
+	await $Timer.timeout
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 
 

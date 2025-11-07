@@ -14,9 +14,6 @@ var _slash_hit_happened := false
 @export var attack_damage := 3.0
 
 
-func _enter_tree() -> void:
-	set_multiplayer_authority(name.to_int())
-
 
 
 func _ready():

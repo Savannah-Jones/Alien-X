@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://svtiumvnpcse"
+path="res://.godot/imported/distress-signal-107676.mp3-53f2cecc4b961bc7b05085d4d34dfda8.mp3str"
+
+[deps]
+
+source_file="res://Art/Map Assets/distress-signal-107676.mp3"
+dest_files=["res://.godot/imported/distress-signal-107676.mp3-53f2cecc4b961bc7b05085d4d34dfda8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
