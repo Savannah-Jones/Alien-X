@@ -1,18 +1,70 @@
-[gd_scene load_steps=43 format=3 uid="uid://d4go6lmobu85h"]
+[gd_scene load_steps=59 format=3 uid="uid://d4go6lmobu85h"]
 
 [ext_resource type="Script" uid="uid://cdc07sdm4lpy4" path="res://Scripts/Runner.gd" id="1_j1som"]
 [ext_resource type="PackedScene" uid="uid://d007wxbdk3cra" path="res://Scenes/footsteps.tscn" id="2_p81ih"]
+[ext_resource type="Texture2D" uid="uid://cwg6x20kibd3g" path="res://Art/Character Assets/Unarmed_Idle_front-Sheet.png" id="3_hnpl4"]
 [ext_resource type="Texture2D" uid="uid://crmt25k1oyit8" path="res://Art/Character Assets/Unarmed_Walk_front-Sheet.png" id="3_wr6ry"]
+[ext_resource type="Texture2D" uid="uid://cvu7g3qxlnbgq" path="res://Art/Character Assets/Unarmed_Idle_side_left-Sheet.png" id="4_c30lh"]
 [ext_resource type="Texture2D" uid="uid://cno04eqih2jbk" path="res://Art/Character Assets/Unarmed_Walk_side_left-Sheet.png" id="4_m3edr"]
 [ext_resource type="AudioStream" uid="uid://b08mu5svtuvhg" path="res://Music/PlayerSounds/heartbeat-tense-377250.mp3" id="4_tebkp"]
 [ext_resource type="AudioStream" uid="uid://cau3fhfguntfq" path="res://Music/PlayerSounds/concrete-footsteps-1-6265.mp3" id="5_aq4gv"]
+[ext_resource type="Texture2D" uid="uid://c2js84sj8qxgj" path="res://Art/Character Assets/Unarmed_Idle_side_right-Sheet.png" id="5_cyh5k"]
 [ext_resource type="Texture2D" uid="uid://6lh2ox7ipsft" path="res://Art/Character Assets/Unarmed_Walk_side_right-Sheet.png" id="5_m34jp"]
 [ext_resource type="Texture2D" uid="uid://dnir4mckg8v6j" path="res://Art/Character Assets/Unarmed_Walk_back-Sheet.png" id="6_mba06"]
 [ext_resource type="AudioStream" uid="uid://lilu7hc7hjsx" path="res://Music/PlayerSounds/running-on-concrete-268478.mp3" id="6_my6vf"]
+[ext_resource type="Texture2D" uid="uid://b777dou2jgpk" path="res://Art/Character Assets/Unarmed_Idle_back-Sheet.png" id="6_vk1d7"]
 [ext_resource type="AudioStream" uid="uid://cds6x7xvf51fy" path="res://Music/PlayerSounds/man-death-scream-186763.mp3" id="7_wr6ry"]
 [ext_resource type="AudioStream" uid="uid://bsxvs40kh61rb" path="res://Music/PlayerSounds/normal-breath-loop-400151.mp3" id="8_p81ih"]
 [ext_resource type="AudioStream" uid="uid://bvr0ssqt031kb" path="res://Music/MonsterSounds/114-low-impact-420335.mp3" id="9_ukf3h"]
 [ext_resource type="Texture2D" uid="uid://cbi3muw3u0lja" path="res://Art/Character Assets/light.png" id="13_wr6ry"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h2pd"]
+atlas = ExtResource("3_hnpl4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf4hk"]
+atlas = ExtResource("3_hnpl4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjx8h"]
+atlas = ExtResource("3_hnpl4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljfqp"]
+atlas = ExtResource("3_hnpl4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5li7n"]
+atlas = ExtResource("4_c30lh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53x00"]
+atlas = ExtResource("4_c30lh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlhko"]
+atlas = ExtResource("5_cyh5k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye7e3"]
+atlas = ExtResource("5_cyh5k")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa3mp"]
+atlas = ExtResource("6_vk1d7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37l6q"]
+atlas = ExtResource("6_vk1d7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teell"]
+atlas = ExtResource("6_vk1d7")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03r4u"]
+atlas = ExtResource("6_vk1d7")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnpl4"]
 atlas = ExtResource("3_wr6ry")
@@ -112,6 +164,62 @@ region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4h2pd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h2pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf4hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjx8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljfqp")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_5li7n")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_53x00")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_jlhko")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ye7e3")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa3mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37l6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teell")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03r4u")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hnpl4")
@@ -248,7 +356,8 @@ footprint_lifetime = 6.0
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_4h2pd")
-animation = &"walk_up"
+animation = &"idle_down"
+frame_progress = 0.750099
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2.5)
